@@ -1,0 +1,179 @@
+// Global styles
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  color: #333;
+  background: #fff;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+// Fonts
+// Valencia
+@font-face {
+  font-family: "Valencia";
+  src: url("../fonts/Valencia\ 400.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Avenir
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/avenir-heavy.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/avenir-medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/avenir-book.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/avenir-light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+// KEYFRAMES
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+    height: 10px;
+    width: 10px;
+    transition: opacity 0.5s linear;
+  }
+
+  50% {
+    opacity: 0;
+    transform: scale(3);
+    transition: opacity 0.5s linear;
+  }
+
+  100% {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+}
+
+// Navigation
+.navBtn,
+.navigation {
+  position: absolute;
+  z-index: 1;
+  right: 30px;
+}
+
+.navBtn {
+  top: 30px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #333333d8;
+  cursor: pointer;
+
+  .pulse {
+    background: #333;
+    border-radius: 50%;
+    animation: pulse 7s infinite;
+  }
+}
+
+.navigation {
+  padding-top: 30px;
+  top: 40px;
+
+  ul {
+    list-style: none;
+
+    li {
+      padding: 0.2rem 0;
+      font-size: 20px;
+      font-weight: 500;
+      cursor: pointer;
+
+      a {
+        color: #333;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// Sections
+.section {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+// Welcome Section
+.welcomeSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  h1 {
+    font-family: Valencia;
+    font-size: 180px;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 50px;
+  }
+}
+
+// TextSlide Section
+// About Section
+.textSlideSection {
+  padding-top: 11%;
+
+  .slideHeader {
+    font-weight: 800;
+    font-size: 200px;
+    color: #bebebe7c;
+    position: absolute;
+    z-index: 1;
+  }
+
+  .slideText {
+    position: relative;
+    display: block;
+    z-index: 2;
+    font-size: 38px;
+    font-weight: 300;
+    top: 140px;
+    right: 12%;
+    max-width: 1100px;
+    float: right;
+  }
+
+   // Contact Page
+   .logoContainer {
+       img {
+           max-width: 200px;
+           max-height: 200px;
+           padding: 2em;
+       }
+   }
+}
