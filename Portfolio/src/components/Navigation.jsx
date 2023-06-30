@@ -23,17 +23,15 @@ const Navigation = () => {
       navItems.style.visibility = "visible";
 
       // Use gsap animation library to animate the appearance of the menu items
-      // The fromTo method animates from the first set of css properties to the second set
       gsap.fromTo(
         navItems.querySelectorAll("li"),
-        { opacity: 0, x: -120 }, // Start from transparent and 120 pixels to the left
+        { opacity: 0, x: -120 },
         {
-          opacity: 1, // Fade in to full opacity
-          x: 0, // Move to original position
-          stagger: 0.2, // Stagger the animation between elements by 0.2 seconds
-          duration: 0.5, // Animation duration is half a second
+          opacity: 1,
+          x: 0,
+          stagger: 0.2,
+          duration: 0.5,
           onComplete: () =>
-            // Once the animation completes, clear all applied properties
             gsap.set(navItems.querySelectorAll("li"), { clearProps: "all" }),
         }
       );
@@ -41,14 +39,13 @@ const Navigation = () => {
       // If the menu is already visible, hide it
       gsap.fromTo(
         navItems.querySelectorAll("li"),
-        { opacity: 1, x: 0 }, // Start from full opacity
+        { opacity: 1, x: 0 },
         {
-          opacity: 0, // Fade out to transparent
-          x: 120, // Move 120 pixels to the right
-          stagger: 0.2, // Stagger the animation between elements by 0.2 seconds
-          duration: 0.5, // Animation duration is half a second
+          opacity: 0,
+          x: 120,
+          stagger: 0.2,
+          duration: 0.5,
           onComplete: () => {
-            // Once the animation completes, clear all applied properties
             gsap.set(navItems.querySelectorAll("li"), { clearProps: "all" });
 
             // Hide the navigation
@@ -59,7 +56,7 @@ const Navigation = () => {
     }
   };
 
-  // Render the navigation button and the navigation menu
+
   return (
     <div className="navigationWrapper">
       {/* Navigation button that triggers the showMenu function when clicked */}
@@ -95,5 +92,5 @@ const Navigation = () => {
   );
 };
 
-// Export the Navigation component
+
 export default Navigation;

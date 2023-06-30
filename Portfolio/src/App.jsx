@@ -17,6 +17,7 @@ const App = () => {
                   ultricies."
         showIcons={false}
         animationDirection={true}
+        addedId="about"
       />
       <TextSlideSection
         title="SKILLS"
@@ -25,8 +26,9 @@ const App = () => {
                   ultricies."
         showIcons={false}
         animationDirection={false}
+        addedId="skills"
       />
-      <TextSlideSection title="CONTACT" showIcons={true} animationDirection={true}/>
+      <TextSlideSection title="CONTACT" showIcons={true} animationDirection={true} addedId="contact"/>
     </div>
   );
 };
