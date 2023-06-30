@@ -13,7 +13,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const TextSlideSection = ({ title, text, showIcons, animationDirection, addedId }) => {
+const TextSlideSection = ({
+  title,
+  text,
+  showIcons,
+  animationDirection,
+  addedId,
+}) => {
   // useRef hook to get a reference to the slideHeader span
   const bcgRef = useRef(null);
 
@@ -61,11 +67,23 @@ const TextSlideSection = ({ title, text, showIcons, animationDirection, addedId 
       </span>
       {!showIcons && <span className="slideText">{text}</span>}
       {showIcons && (
-        <div className="logoContainer">
-          <img src={MAIL} alt="Mail" />
-          <img src={CALENDLY} alt="Calendly" />
-          <img src={CALL} alt="Phone" />
-          <img src={LINKEDIN} alt="LinkedIN" />
+        <div className="contactWrapper">
+          <div className="logoContainer">
+            <img src={MAIL} alt="Mail" />
+            <img src={CALENDLY} alt="Calendly" />
+            <img src={CALL} alt="Phone" />
+            <img src={LINKEDIN} alt="LinkedIN" />
+          </div>
+          <div className="contactInformation">
+            <div className="contactItemWrapper">
+              <span className="contactItem">+49 (0)176 / 60145188</span>
+              <span className="contactItem">hello@carstenjung.io</span>
+            </div>
+            <div className="contactItemWrapper">
+              <span className="legalNotice">Impressum</span>
+              <span className="legalNotice">Datenschutz</span>
+            </div>
+          </div>
         </div>
       )}
     </div>

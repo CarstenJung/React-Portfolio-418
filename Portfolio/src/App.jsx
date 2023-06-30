@@ -8,8 +8,11 @@ import TextSlideSection from "./components/TextSlideSection";
 const App = () => {
   return (
     <div className="App">
+      {/* Navigation component */}
       <Navigation />
+      {/* Welcome section component */}
       <WelcomeSection />
+      {/* About section components */}
       <TextSlideSection
         title="ABOUT ME"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et nisi
@@ -19,6 +22,7 @@ const App = () => {
         animationDirection={true}
         addedId="about"
       />
+      {/* Skills section components */}
       <TextSlideSection
         title="SKILLS"
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et nisi
@@ -28,7 +32,13 @@ const App = () => {
         animationDirection={false}
         addedId="skills"
       />
-      <TextSlideSection title="CONTACT" showIcons={true} animationDirection={true} addedId="contact"/>
+      {/* Contact section components */}
+      <TextSlideSection
+        title="CONTACT"
+        showIcons={true}
+        animationDirection={true}
+        addedId="contact"
+      />
     </div>
   );
 };
