@@ -1,11 +1,20 @@
+import { useState } from "react";
 import "./assets/scss/app.scss";
 
 // Components
 import WelcomeSection from "./components/WelcomeSection";
 import Navigation from "./components/Navigation";
 import TextSlideSection from "./components/TextSlideSection";
+import DataSlider from "./components/DataSlider";
+
+// Data
+import { EducationItems } from "./assets/data/EducationItems";
+import { PortfolioItems } from "./assets/data/PortfolioItems";
 
 const App = () => {
+  const [currentEducation, setCurrentEducation] = useState(EducationItems[0]);
+  const [currentPortfolio, setCurrentPortfolio] = useState(PortfolioItems[0]);
+
   return (
     <div className="App">
       {/* Navigation component */}
@@ -22,6 +31,20 @@ const App = () => {
         animationDirection={true}
         addedId="about"
       />
+      {/* Education section components */}
+      <DataSlider
+        currentItem={currentEducation}
+        setCurrentItem={setCurrentEducation}
+        dataItem={EducationItems}
+        btnText="See Certificate"
+      />
+      {/* Portfolio section components */}
+     {/*  <DataSlider
+        currentItem={currentPortfolio}
+        setCurrentItem={setCurrentPortfolio}
+        dataItem={PortfolioItems}
+        btnText="Visit Website"
+      /> */}
       {/* Skills section components */}
       <TextSlideSection
         title="SKILLS"

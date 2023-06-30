@@ -209,3 +209,28 @@ html {
     }
   }
 }
+
+// DATA SLIDER
+.dataSliderWrapper {
+  display: flex;
+  flex-direction: row;
+
+  .dataSliderLeft,
+  .dataSliderRight {
+    height: 100vh;
+  }
+
+  .dataSliderLeft {
+    flex-grow: 1;
+    background: blue;
+  }
+
+  .dataSliderRight {
+    flex-grow: 2;
+    background: red;
+
+    img {
+      max-width: 500px;
+    }
+  }
+}
