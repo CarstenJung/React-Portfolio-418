@@ -37,7 +37,7 @@ const TextSlideSection = ({
             trigger: bcgRef.current,
             start: "top bottom",
             end: "bottom center",
-            scrub: 3,
+            scrub: 4,
           },
         }
       );
@@ -45,15 +45,15 @@ const TextSlideSection = ({
       // GSAP animation to animate the slideHeader span from the right end of the viewport to the middle
       gsap.fromTo(
         bcgRef.current,
-        { x: "90vw" },
+        { right: "0" },
         {
-          x: "50vw",
+          left: "50%",
           ease: "Power2.easeInOut",
           scrollTrigger: {
             trigger: bcgRef.current,
             start: "top bottom",
             end: "bottom center",
-            scrub: 3,
+            scrub: 4,
           },
         }
       );
@@ -68,20 +68,14 @@ const TextSlideSection = ({
       {!showIcons && <span className="slideText">{text}</span>}
       {showIcons && (
         <div className="contactWrapper">
-          <div className="logoContainer">
+          <div className="iconContainer">
             <img src={MAIL} alt="Mail" />
             <img src={CALENDLY} alt="Calendly" />
             <img src={CALL} alt="Phone" />
             <img src={LINKEDIN} alt="LinkedIN" />
-          </div>
-          <div className="contactInformation">
-            <div className="contactItemWrapper">
-              <span className="contactItem">+49 (0)176 / 60145188</span>
-              <span className="contactItem">hello@carstenjung.io</span>
-            </div>
-            <div className="legalNoticeWrapper">
-              <span className="legalNotice">Impressum</span>
-              <span className="legalNotice">Datenschutz</span>
+            <div className="contactInformation">
+              <p className="contactItem">+49 (0)176 / 60145188</p>
+              <p className="contactItem">hello@carstenjung.io</p>
             </div>
           </div>
         </div>

@@ -162,6 +162,7 @@ html {
 // About Section
 .textSlideSection {
   padding-top: 11%;
+  position: relative;
 
   .slideHeader {
     font-weight: 800;
@@ -185,43 +186,26 @@ html {
 
   // Contact Page
   .contactWrapper {
-    .logoContainer {
+    .iconContainer {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        width: 100%;
+        margin-top: 3em;
+
       img {
-        max-width: 200px;
-        max-height: 200px;
+        position: relative;
+        z-index: 1;
+        max-width: 170px;
+        max-height: 170px;
         padding: 2em;
       }
     }
 
     .contactInformation {
-      position: absolute;
-      background: #eee;
-      bottom: 0;
-      height: 35px;
-      width: 100vw;
-
-      .contactItemWrapper,
-      .legalNoticeWrapper {
-        position: absolute;
-        width: 100vw;
-        line-height: 35px;
-      }
-
-      .contactItemWrapper {
-        text-align: center;
-
-        .contactItem {
-          padding: 0 3em 0 3em;
-        }
-      }
-
-      .legalNoticeWrapper {
-        text-align: right;
-
-        .legalNotice {
-          padding-right: 3em;
-        }
-      }
+        padding: 3em 3em 3em 1em;
+        font-size: 40px;
+        font-weight: 500;
     }
   }
 }
