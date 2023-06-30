@@ -100,7 +100,7 @@ html {
     background: transparent;
     border: 1px solid #333;
     border-radius: 50%;
-    opacity: .3;
+    opacity: 0.3;
   }
 
   .pulse {
@@ -121,6 +121,7 @@ html {
       padding: 0.2rem 0;
       font-size: 20px;
       font-weight: 500;
+      opacity: 0.9;
       cursor: pointer;
 
       a {
@@ -192,34 +193,35 @@ html {
       }
     }
 
-   .contactInformation {
-       position: absolute;
-       background: #eee;
-       bottom: 0;
-       height: 35px;
-       width: 100vw;
+    .contactInformation {
+      position: absolute;
+      background: #eee;
+      bottom: 0;
+      height: 35px;
+      width: 100vw;
 
-    .contactItemWrapper, .legalNoticeWrapper {
+      .contactItemWrapper,
+      .legalNoticeWrapper {
         position: absolute;
         width: 100vw;
         line-height: 35px;
-    }
+      }
 
-    .contactItemWrapper {
+      .contactItemWrapper {
         text-align: center;
 
         .contactItem {
-            padding: 0 3em 0 3em;
+          padding: 0 3em 0 3em;
         }
-    }
+      }
 
-    .legalNoticeWrapper {
+      .legalNoticeWrapper {
         text-align: right;
 
         .legalNotice {
-            padding-right: 3em;
+          padding-right: 3em;
         }
+      }
     }
-   }
   }
 }
