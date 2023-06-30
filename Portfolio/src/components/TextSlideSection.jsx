@@ -79,7 +79,7 @@ const TextSlideSection = ({
               <span className="contactItem">+49 (0)176 / 60145188</span>
               <span className="contactItem">hello@carstenjung.io</span>
             </div>
-            <div className="contactItemWrapper">
+            <div className="legalNoticeWrapper">
               <span className="legalNotice">Impressum</span>
               <span className="legalNotice">Datenschutz</span>
             </div>

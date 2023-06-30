@@ -89,6 +89,20 @@ html {
   background: #333333d8;
   cursor: pointer;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 25px;
+    background: transparent;
+    border: 1px solid #333;
+    border-radius: 50%;
+    opacity: .3;
+  }
+
   .pulse {
     background: #333;
     border-radius: 50%;
@@ -182,17 +196,29 @@ html {
        position: absolute;
        background: #eee;
        bottom: 0;
-       padding: 10px 0 10px 0;
+       height: 35px;
        width: 100vw;
 
-    .contactItemWrapper {
-        display: inline-block;
-        width: 60vw;
-        text-align: right;
+    .contactItemWrapper, .legalNoticeWrapper {
+        position: absolute;
+        width: 100vw;
+        line-height: 35px;
     }
 
-    .legalNotice,.contactItem {
-        padding-right: 3rem;
+    .contactItemWrapper {
+        text-align: center;
+
+        .contactItem {
+            padding: 0 3em 0 3em;
+        }
+    }
+
+    .legalNoticeWrapper {
+        text-align: right;
+
+        .legalNotice {
+            padding-right: 3em;
+        }
     }
    }
   }
