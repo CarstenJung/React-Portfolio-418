@@ -17,7 +17,7 @@ const DataSlider = ({ currentItem, setCurrentItem, btnText, dataItem }) => {
     ScrollTrigger.create({
       trigger: dataSliderWrapper,
       start: "top top",
-      end: "bottom top",
+      end: "bottom bottom",
       pin: dataSliderLeft,
       pinSpacing: false,
       markers: true, // For debugging purposes
@@ -27,7 +27,7 @@ const DataSlider = ({ currentItem, setCurrentItem, btnText, dataItem }) => {
       trigger: dataSliderWrapper,
       start: "top top",
       end: () => `+=${dataSliderRight.offsetHeight}`,
-      pin: dataSliderRight,
+      pin: dataSliderWrapper,
       pinSpacing: false,
       markers: true, // For debugging purposes
     });
