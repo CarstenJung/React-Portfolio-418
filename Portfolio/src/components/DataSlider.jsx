@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const DataSlider = ({ currentItem, setCurrentItem, btnText, dataItem }) => {
+const DataSlider = ({ currentItem, setCurrentItem, btnText, dataItem, addedId }) => {
   const dataSliderWrapperRef = useRef(null);
   const dataSliderLeftRef = useRef(null);
   const dataSliderRightRef = useRef(null);
@@ -17,7 +17,7 @@ const DataSlider = ({ currentItem, setCurrentItem, btnText, dataItem }) => {
     ScrollTrigger.create({
       trigger: dataSliderWrapper,
       start: "top top",
-      end: "bottom bottom",
+      end: "bottom top",
       pin: dataSliderLeft,
       pinSpacing: false,
       markers: true, // For debugging purposes
@@ -26,8 +26,8 @@ const DataSlider = ({ currentItem, setCurrentItem, btnText, dataItem }) => {
     ScrollTrigger.create({
       trigger: dataSliderWrapper,
       start: "top top",
-      end: () => `+=${dataSliderRight.offsetHeight}`,
-      pin: dataSliderWrapper,
+      /*TODO end: () => `+=${dataSliderRight.offsetHeight}`, */
+      pin: dataSliderRight,
       pinSpacing: false,
       markers: true, // For debugging purposes
     });
@@ -39,7 +39,7 @@ const DataSlider = ({ currentItem, setCurrentItem, btnText, dataItem }) => {
 
 
   return (
-    <div className="dataSlider section">
+    <div className="dataSlider section" id={addedId}>
       <div className="dataSliderWrapper" ref={dataSliderWrapperRef}>
         <div className="dataSliderLeft" ref={dataSliderLeftRef}>
           <div className="dataTextContainer">

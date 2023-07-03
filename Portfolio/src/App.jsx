@@ -37,6 +37,7 @@ const App = () => {
         setCurrentItem={setCurrentEducation}
         dataItem={EducationItems}
         btnText="See Certificate"
+        addedId="education"
       />
       {/* Portfolio section components */}
      {/*  <DataSlider
@@ -44,6 +45,7 @@ const App = () => {
         setCurrentItem={setCurrentPortfolio}
         dataItem={PortfolioItems}
         btnText="Visit Website"
+        addedId="portfolio"
       /> */}
       {/* Skills section components */}
       <TextSlideSection
