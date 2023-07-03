@@ -211,85 +211,30 @@ html {
 }
 
 // DATA SLIDER
-.dataSliderWrapper {
-  display: flex;
-  flex-direction: row;
-
-  .dataSliderLeft,
-  .dataSliderRight {
-    height: 100vh;
-  }
-
-  .dataSliderLeft {
-    flex-grow: 1;
-    background: blue;
-  }
-
-  .dataSliderRight {
-    flex-grow: 2;
-    border: 1px solid black;
-
-    .slideImgWrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-
-      img {
-        max-width: 650px;
-      }
-    }
-  }
+.dataSlider {
+  height: 800vh
 }
-
-// TEST
 .dataSliderWrapper {
   display: flex;
+  flex-flow: row nowrap;
 
   .dataSliderLeft {
-    position: sticky;
-    top: 0;
-    width: 50%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-flow: column nowrap;
     height: 100vh;
-    overflow: auto;
-    background-color: #f1f1f1;
-    padding: 20px;
-    box-sizing: border-box;
+    width: 50%;
+    background: transparent;
   }
 
   .dataSliderRight {
+    margin-left: 50%;
     width: 50%;
-    height: 100vh;
-    overflow-y: scroll;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-  .dataTextContainer {
-    padding: 10rem 4rem 4rem 3rem;
-
-    h1 {
-      position: relative;
-      font-size: 135px;
-      font-weight: 800;
-    }
-
-    h3 {
-      font-weight: 500;
-      font-size: 25px;
-      padding-top: 2rem;
-    }
-
-    p {
-      font-weight: 400;
-      font-size: 20px;
-      padding: 0.5rem 2rem 2rem 0;
-    }
-
-    a {
-      color: #333;
-      text-decoration: underline;
-      cursor: pointer;
-    }
+    //height: 1200vh;
+    display: flex;
+    flex-flow: column nowrap;
+    background: red;
   }
 }
