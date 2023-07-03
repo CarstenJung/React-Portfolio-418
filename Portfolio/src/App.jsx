@@ -40,13 +40,13 @@ const App = () => {
         addedId="education"
       />
       {/* Portfolio section components */}
-     {/*  <DataSlider
+      <DataSlider
         currentItem={currentPortfolio}
         setCurrentItem={setCurrentPortfolio}
         dataItem={PortfolioItems}
         btnText="Visit Website"
         addedId="portfolio"
-      /> */}
+      />
       {/* Skills section components */}
       <TextSlideSection
         title="SKILLS"

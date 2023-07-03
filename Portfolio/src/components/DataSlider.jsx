@@ -19,9 +19,7 @@ const DataSlider = ({ currentItem, setCurrentItem, btnText, dataItem, addedId })
           {dataItem.map((item) => (
             <div
               key={item.id}
-              className={
-                item.id === currentItem.id ? "slideImgWrapper active" : "slideImgWrapper"
-              }
+              className={"slideImgWrapper"}
             >
               <img src={item.image} alt={item.title} className="dataSliderImage" />
             </div>
