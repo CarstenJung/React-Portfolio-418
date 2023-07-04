@@ -40,14 +40,5 @@ export const PortfolioItems = [
       subdescription: "Effects with GSAP • Green Sock Animation",
       link: "https://kieninger-consulting.ch/",
       image: KIENINGER,
-    },
-    {
-      id: 5,
-      title: "LogoErgo",
-      subtitle: "Speech and occupational therapy practice",
-      description: "WordPress website created with DIVI, HTML and CSS",
-      subdescription: "Simple Website • Only DIVI animations",
-      link: "https://logoergo-schoemberg.de/",
-      image: LOGOERGO,
-    },
+    }
 ]

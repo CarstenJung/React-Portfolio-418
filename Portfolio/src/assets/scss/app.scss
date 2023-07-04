@@ -216,17 +216,17 @@ html {
 }
 
 .dataSlider#portfolio {
-  height: 500vh;
+  height: 400vh;
 }
 
 .dataSlider {
   .dataSliderWrapper {
     display: flex;
     flex-flow: row nowrap;
-  
+
     .dataSliderLeft {
       position: fixed;
-      top: 0px;
+      top: 10%;
       left: 0px;
       display: flex;
       flex-flow: column nowrap;
@@ -235,25 +235,27 @@ html {
       background: transparent;
 
       .dataTextContainer {
+        padding: 5rem;
+
         h1 {
           position: relative;
           font-size: 8.4rem;
           font-weight: 800;
           margin-top: 30px;
         }
-  
+
         h3 {
           font-weight: 500;
           font-size: 1.6rem;
           padding-top: 2rem;
         }
-  
+
         p {
           font-weight: 400;
           font-size: 1.25rem;
           padding: 0.5rem 2rem 2rem 0;
         }
-  
+
         a {
           color: #333;
           text-decoration: underline;
@@ -261,36 +263,36 @@ html {
         }
       }
     }
-  
+
     .dataSliderRight {
       margin-left: 50%;
       width: 50%;
       display: flex;
       flex-flow: column nowrap;
-  
+
       .slideImgWrapper {
         height: 100vh;
         position: relative;
-  
+
         img {
           display: block;
           margin: auto;
-          max-width: 80%;
+          max-width: 70%;
           padding: 1rem;
         }
       }
     }
-  }  
+  }
 }
 
 .visible {
   opacity: 1;
-  transition: opacity .5s ease-in-out;
+  transition: opacity .3s ease-in-out;
 }
 
 .hidden {
   opacity: 0;
-  transition: opacity .5s ease-in-out;
+  transition: opacity .3s ease-in-out;
 }
 
 
