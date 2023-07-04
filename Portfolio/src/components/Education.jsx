@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const DataSlider = ({
+const Education = ({
   currentItem,
   setCurrentItem,
   btnText,
@@ -86,4 +86,4 @@ const DataSlider = ({
   );
 };
 
-export default DataSlider;
+export default Education;
