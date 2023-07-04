@@ -5,7 +5,7 @@ import "./assets/scss/app.scss";
 import WelcomeSection from "./components/WelcomeSection";
 import Navigation from "./components/Navigation";
 import TextSlideSection from "./components/TextSlideSection";
-import DataSlider from "./components/DataSlider";
+import DataSlider from "./components/DataSlider/DataSlider";
 
 // Data
 import { EducationItems } from "./assets/data/EducationItems";
@@ -37,16 +37,16 @@ const App = () => {
         setCurrentItem={setCurrentEducation}
         dataItem={EducationItems}
         btnText="See Certificate"
-        addedId="education"
+        text="EDUCATION"
       />
       {/* Portfolio section components */}
-     {/*  <DataSlider
+      <DataSlider
         currentItem={currentPortfolio}
         setCurrentItem={setCurrentPortfolio}
         dataItem={PortfolioItems}
         btnText="Visit Website"
-        addedId="portfolio"
-      /> */}
+        text="PORTFOLIO"
+      />
       {/* Skills section components */}
       <TextSlideSection
         title="SKILLS"
