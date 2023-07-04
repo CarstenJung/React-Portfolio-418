@@ -282,3 +282,15 @@ html {
     }
   }  
 }
+
+.visible {
+  opacity: 1;
+  transition: opacity .5s ease-in-out;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
+}
+
+
