@@ -216,6 +216,17 @@ html {
 }
 
 .dataSlider {
+  
+  .visible {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .hidden {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
   .dataSliderWrapper {
     display: flex;
     flex-flow: row nowrap;
@@ -280,15 +291,3 @@ html {
     }
   }
 }
-
-.visible {
-  opacity: 1;
-  transition: opacity .3s ease-in-out;
-}
-
-.hidden {
-  opacity: 0;
-  transition: opacity .3s ease-in-out;
-}
-
-

@@ -70,7 +70,7 @@ const DataSlider = ({
             </a>
           </div>
         </div>
-        <div className="dataSliderRight" ref={inViewRef}>
+        <div className="dataSliderRight" ref={inViewRef} >
           {dataItem.map((item) => (
             <div key={item.id} data-id={item.id} className="slideImgWrapper">
               <img
