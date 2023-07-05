@@ -216,8 +216,7 @@ html {
 }
 
 .dataSlider {
-
-/*   .visible {
+  /*   .visible {
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
   }
@@ -242,6 +241,9 @@ html {
       background: transparent;
 
       .dataTextContainer {
+        animation: revealText 1s ease-out forwards;
+          animation-delay: 1s;
+          opacity: 0;
         padding: 5rem;
 
         h1 {
@@ -249,6 +251,18 @@ html {
           font-size: clamp(2rem, 2rem + 5vw, 8.4rem);
           font-weight: 800;
           margin-top: 30px;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: #333;
+            animation: hideBox 1s ease-out forwards;
+            opacity: 1;
+          }
         }
 
         h3 {
@@ -289,5 +303,37 @@ html {
         }
       }
     }
+  }
+}
+
+@keyframes hideBox {
+  0% {
+    width: 0;
+  }
+
+  25% {
+    width: 50%;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  75% {
+    width: 50%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}
+
+@keyframes revealText {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
