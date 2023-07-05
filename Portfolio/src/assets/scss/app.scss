@@ -149,12 +149,12 @@ html {
 
   h1 {
     font-family: Valencia;
-    font-size: 11.3rem;
+    font-size: clamp(4rem, 3rem + 10vw, 11.3rem);
     font-weight: 500;
   }
 
   p {
-    font-size: 3.2rem;
+    font-size: clamp(1rem, 1rem + 4vw, 3.2rem);
   }
 }
 
@@ -166,7 +166,7 @@ html {
 
   .slideHeader {
     font-weight: 800;
-    font-size: 12.5rem;
+    font-size: clamp(3rem, 3rem + 12vw, 12.5rem);
     color: #bebebe7c;
     position: absolute;
     z-index: 1;
@@ -176,7 +176,7 @@ html {
     position: relative;
     display: block;
     z-index: 2;
-    font-size: 2.38rem;
+    font-size: clamp(1rem, 1rem + 3vw, 2.38rem);
     font-weight: 300;
     top: 140px;
     right: 12%;
@@ -211,12 +211,8 @@ html {
 }
 
 // DATA SLIDER
-.dataSlider#education {
-  height: 700vh;
-}
-
-.dataSlider#portfolio {
-  height: 400vh;
+.dataSlider {
+  height: 1100vh;
 }
 
 .dataSlider {
@@ -239,14 +235,14 @@ html {
 
         h1 {
           position: relative;
-          font-size: 8.4rem;
+          font-size: clamp(2rem, 2rem + 5vw, 8.4rem);
           font-weight: 800;
           margin-top: 30px;
         }
 
         h3 {
           font-weight: 500;
-          font-size: 1.6rem;
+          font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
           padding-top: 2rem;
         }
 

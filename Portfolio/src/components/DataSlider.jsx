@@ -5,7 +5,6 @@ const DataSlider = ({
   setCurrentItem,
   btnText,
   dataItem,
-  addedId,
 }) => {
   const inViewRef = useRef(null);
   const [textInView, setTextInView] = useState(false);
@@ -39,6 +38,7 @@ const DataSlider = ({
       }
     );
 
+
     if (inViewRef.current) {
       for (let child of inViewRef.current.children) {
         observer.observe(child);
@@ -52,14 +52,14 @@ const DataSlider = ({
         }
       }
     };
-  }, [dataItem, currentItem]);
+  }, [currentItem]);
 
   return (
-    <div className="dataSlider section" id={addedId}>
+    <div className="dataSlider section">
       <div className="dataSliderWrapper">
         <div className="dataSliderLeft">
           <div
-            className={`dataTextContainer ${textInView ? "visible" : "hidden"}`}
+            className={`dataTextContainer ${textInView ? "visible" : "hidden"}`} key={currentItem.id}
           >
             <h1>{currentItem.title}</h1>
             <h3>{currentItem.subtitle}</h3>
@@ -72,7 +72,7 @@ const DataSlider = ({
         </div>
         <div className="dataSliderRight" ref={inViewRef}>
           {dataItem.map((item) => (
-            <div key={item.id} data-id={item.id} className={"slideImgWrapper"}>
+            <div key={item.id} data-id={item.id} className="slideImgWrapper">
               <img
                 src={item.image}
                 alt={item.title}

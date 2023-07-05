@@ -8,13 +8,11 @@ import TextSlideSection from "./components/TextSlideSection";
 import DataSlider from "./components/DataSlider";
 
 // Data
-import { EducationItems } from "./assets/data/EducationItems";
-import { PortfolioItems } from "./assets/data/PortfolioItems";
+import { DataItems } from "./assets/data/DataItems";
 
 const App = () => {
-  const [currentEducation, setCurrentEducation] = useState(EducationItems[0]);
-  const [currentPortfolio, setCurrentPortfolio] = useState(PortfolioItems[0]);
-
+  const [currentDataItem, setCurrentDataItem] = useState(DataItems[0]);
+  
   return (
     <div className="App">
       {/* Navigation component */}
@@ -33,20 +31,19 @@ const App = () => {
       />
       {/* Education section components */}
       <DataSlider
-        currentItem={currentEducation}
-        setCurrentItem={setCurrentEducation}
-        dataItem={EducationItems}
+        currentItem={currentDataItem}
+        setCurrentItem={setCurrentDataItem}
+        dataItem={DataItems}
         btnText="See Certificate"
-        addedId="education"
       />
       {/* Portfolio section components */}
-      <DataSlider
+      {/* <DataSlider
         currentItem={currentPortfolio}
         setCurrentItem={setCurrentPortfolio}
         dataItem={PortfolioItems}
         btnText="Visit Website"
         addedId="portfolio"
-      />
+      /> */}
       {/* Skills section components */}
       <TextSlideSection
         title="SKILLS"
