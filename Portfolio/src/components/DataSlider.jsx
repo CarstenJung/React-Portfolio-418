@@ -34,7 +34,7 @@ const DataSlider = ({
           setTimeout(() => {
             setCurrentItem(item);
             setTextInView(true);
-            
+
           }, 0);
         }
 
