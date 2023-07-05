@@ -39,8 +39,7 @@ const DataSlider = ({
         }
 
         // Animate opacity to 1 when the element is intersecting
-        gsap.fromTo(entry.target, { opacity: 0}, { opacity: 1, duration: 2});
-        gsap.to(".dataTextContainer", { "--beforeWidth": "0%", duration: 2 });
+        gsap.fromTo(entry.target, { opacity: 0}, { opacity: 1, duration: 1.5});
 
       } else if (!entry.isIntersecting) {
         intersectingCount = Math.max(0, intersectingCount - 1);

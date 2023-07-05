@@ -47,9 +47,10 @@ const App = () => {
       {/* Skills section components */}
       <TextSlideSection
         title="SKILLS"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et nisi
+        showIconsSkills={true}
+        /* TODO text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et nisi
                   sem. Maecenas imperdiet ante et nulla pulvinar, in ultricies tellus
-                  ultricies."
+                  ultricies." */
         showIcons={false}
         animationDirection={false}
         addedId="skills"
@@ -57,7 +58,7 @@ const App = () => {
       {/* Contact section components */}
       <TextSlideSection
         title="CONTACT"
-        showIcons={true}
+        showIconsContact={true}
         animationDirection={true}
         addedId="contact"
       />
