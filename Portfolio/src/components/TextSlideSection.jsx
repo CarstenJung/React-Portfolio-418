@@ -7,7 +7,6 @@ import CALENDLY from "../assets/img/icons/calendly.png";
 import CALL from "../assets/img/icons/call.png";
 import LINKEDIN from "../assets/img/icons/linkedin.png";
 
-
 // Importing various icons for use in Skills section
 import HTML from "../assets/img/icons/html.png";
 import CSS from "../assets/img/icons/css.png";
@@ -15,8 +14,6 @@ import JS from "../assets/img/icons/js.png";
 import REACT from "../assets/img/icons/react.png";
 import SASS from "../assets/img/icons/sass.png";
 import GIT from "../assets/img/icons/git.png";
-
-
 
 // GSAP ANIMATION LIBRARY
 import { gsap } from "gsap";
@@ -34,6 +31,7 @@ const TextSlideSection = ({
 }) => {
   // useRef hook to get a reference to the slideHeader span
   const bcgRef = useRef(null);
+  const iconSkillsRef = useRef(null);
 
   useEffect(() => {
     // Check for the animation direction
@@ -59,10 +57,25 @@ const TextSlideSection = ({
         bcgRef.current,
         { right: "0" },
         {
-          left: "30%",
+          left: "25%",
           ease: "Power2.easeInOut",
           scrollTrigger: {
             trigger: bcgRef.current,
+            start: "top bottom",
+            end: "bottom center",
+            scrub: 4,
+          },
+        }
+      );
+
+      gsap.fromTo(
+        iconSkillsRef.current,
+        { x: "-30%" },
+        {
+          x: "-10%",
+          ease: "Power2.easeInOut",
+          scrollTrigger: {
+            trigger: iconSkillsRef.current,
             start: "top bottom",
             end: "bottom center",
             scrub: 4,
@@ -94,13 +107,31 @@ const TextSlideSection = ({
       )}
       {showIconsSkills && (
         <div className="contactWrapper">
-          <div className="iconContainer">
-            <img src={HTML} alt="HTML" />
-            <img src={CSS} alt="CSS" />
-            <img src={JS} alt="JavaScript" />
-            <img src={REACT} alt="React" />
-            <img src={SASS} alt="SASS" />
-            <img src={GIT} alt="Git" />
+          <div className="iconContainer" ref={iconSkillsRef}>
+            <figure>
+              <img src={HTML} alt="HTML" className="iconSizeHTML"/>
+              <figcaption>HTML</figcaption>
+            </figure>
+            <figure>
+              <img src={CSS} alt="CSS" className="iconSizeCSS"/>
+              <figcaption>CSS</figcaption>
+            </figure>
+            <figure>
+              <img src={JS} alt="JavaScript" />
+              <figcaption>Java Script</figcaption>
+            </figure>
+            <figure>
+              <img src={REACT} alt="React" />
+              <figcaption>React</figcaption>
+            </figure>
+            <figure>
+              <img src={SASS} alt="SASS" />
+              <figcaption>SASS</figcaption>
+            </figure>
+            <figure>
+              <img src={GIT} alt="Git" />
+              <figcaption>GIT</figcaption>
+            </figure>
           </div>
         </div>
       )}
