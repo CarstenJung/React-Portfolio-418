@@ -73,11 +73,44 @@ html {
   }
 }
 
+@keyframes hideBox {
+  0% {
+    width: 0;
+  }
+
+  25% {
+    width: 50%;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  75% {
+    width: 50%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}
+
+@keyframes revealText {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
 // Navigation
 .navBtn,
 .navigation {
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   right: 30px;
 }
 
@@ -218,7 +251,7 @@ html {
         z-index: 1;
         max-width: 110px;
         max-height: 110px;
-        //padding: 2.5em;
+        cursor: pointer;
         margin: 2rem
       }
     }
@@ -317,34 +350,81 @@ html {
   }
 }
 
-@keyframes hideBox {
-  0% {
-    width: 0;
+// Contact Form Modal
+.contactFormWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  padding: 3rem;
+  background: #fff;
+
+  &:focus {
+    outline: none;
   }
 
-  25% {
-    width: 50%;
+  h1,p {
+    text-align: center;
+    padding: .1rem;
   }
 
-  50% {
-    width: 100%;
+  p {
+    font-size: .8rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
   }
 
-  75% {
-    width: 50%;
+  .closeModal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
   }
 
-  100% {
-    width: 0%;
-  }
-}
 
-@keyframes revealText {
-  from {
-    opacity: 0;
-  }
+  .contactFormModal {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
 
-  to {
-    opacity: 1;
+    input, textarea {
+      margin-bottom: 1rem;
+      border: 1px solid #333;
+      font-size: 1rem;
+      font-weight: 500;
+      outline: none;
+    }
+
+    input {
+      padding: .2rem;
+    }
+
+    textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: .7rem;
+      border: 1px solid #333;
+      background: #333;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      width: 100px;
+      margin: auto;
+      transition: all .3s ease-in-out;
+
+      &:hover {
+        background: #000;
+      }
+    }
+    
   }
 }

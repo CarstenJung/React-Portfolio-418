@@ -13,6 +13,17 @@ import { DataItems } from "./assets/data/DataItems";
 
 const App = () => {
   const [currentDataItem, setCurrentDataItem] = useState(DataItems[0]);
+  
+  // MODAL FORM
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <div className="App">
@@ -23,9 +34,7 @@ const App = () => {
       {/* About section components */}
       <TextSlideSection
         title="ABOUT ME"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et nisi
-                  sem. Maecenas imperdiet ante et nulla pulvinar, in ultricies tellus
-                  ultricies."
+        text="Blending years of relationship-building in sales with freshly brewed coding skills, I've become a bit of a professional Swiss Army knife. I've swapped closing deals for coding loops, and boardrooms for responsive breakpoints. My journey has been more unexpected than a plot twist in a Netflix thriller, but boy, has it been exciting!"
         showIcons={false}
         animationDirection={true}
         addedId="about"
@@ -62,8 +71,9 @@ const App = () => {
         showIconsContact={true}
         animationDirection={true}
         addedId="contact"
+        handleOpen={handleOpen}
       />
-      <ModalForm/>
+      <ModalForm open={open} handleClose={handleClose} />
     </div>
   );
 };

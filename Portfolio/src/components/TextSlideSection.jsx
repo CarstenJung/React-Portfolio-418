@@ -28,6 +28,7 @@ const TextSlideSection = ({
   showIconsSkills,
   animationDirection,
   addedId,
+  handleOpen,
 }) => {
   // useRef hook to get a reference to the slideHeader span
   const bcgRef = useRef(null);
@@ -94,10 +95,16 @@ const TextSlideSection = ({
       {showIconsContact && (
         <div className="contactWrapper">
           <div className="iconContainer">
-            <img src={MAIL} alt="Mail" />
-            <img src={CALENDLY} alt="Calendly" />
+            <img src={MAIL} alt="Mail" onClick={handleOpen} />
+            <a href="https://calendly.com/carstenjung" target="_blank" rel="noopener noreferrer">
+              <img src={CALENDLY} alt="Calendly" />
+            </a>
+            <a href="tel:017660145188" rel="noopener noreferrer">
             <img src={CALL} alt="Phone" />
-            <img src={LINKEDIN} alt="LinkedIN" />
+            </a>
+            <a href="https://www.linkedin.com/in/carsten-jung-44a760177" target="_blank">
+            <img src={LINKEDIN} alt="LinkedIN"/>
+            </a>
             <div className="contactInformation">
               <p className="contactItem">+49 (0)176 / 60145188</p>
               <p className="contactItem">hello@carstenjung.io</p>
@@ -109,11 +116,11 @@ const TextSlideSection = ({
         <div className="contactWrapper">
           <div className="iconContainer" ref={iconSkillsRef}>
             <figure>
-              <img src={HTML} alt="HTML" className="iconSizeHTML"/>
+              <img src={HTML} alt="HTML" className="iconSizeHTML" />
               <figcaption>HTML</figcaption>
             </figure>
             <figure>
-              <img src={CSS} alt="CSS" className="iconSizeCSS"/>
+              <img src={CSS} alt="CSS" className="iconSizeCSS" />
               <figcaption>CSS</figcaption>
             </figure>
             <figure>
