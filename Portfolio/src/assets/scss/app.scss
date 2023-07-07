@@ -191,14 +191,35 @@ html {
       justify-content: end;
       align-items: center;
       width: 100%;
-      margin-top: 5em;
+      margin-top: 7em;
+      position: relative;
+      z-index: 1;
+
+      figure {
+        display: inline-block;
+        text-align: center;
+      }
+
+      figcaption {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .iconSizeCSS {
+        scale: 1.2;
+      }
+
+      .iconSizeHTML {
+        scale: 1.1;
+      }
 
       img {
         position: relative;
         z-index: 1;
-        max-width: 170px;
-        max-height: 170px;
-        padding: 2.5em;
+        max-width: 110px;
+        max-height: 110px;
+        //padding: 2.5em;
+        margin: 2rem
       }
     }
 
@@ -216,16 +237,6 @@ html {
 }
 
 .dataSlider {
-  /*   .visible {
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  .hidden {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  } */
-
   .dataSliderWrapper {
     display: flex;
     flex-flow: row nowrap;

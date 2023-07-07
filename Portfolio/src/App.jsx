@@ -6,13 +6,14 @@ import WelcomeSection from "./components/WelcomeSection";
 import Navigation from "./components/Navigation";
 import TextSlideSection from "./components/TextSlideSection";
 import DataSlider from "./components/DataSlider";
+import ModalForm from "./components/ModalForm";
 
 // Data
 import { DataItems } from "./assets/data/DataItems";
 
 const App = () => {
   const [currentDataItem, setCurrentDataItem] = useState(DataItems[0]);
-  
+
   return (
     <div className="App">
       {/* Navigation component */}
@@ -62,6 +63,7 @@ const App = () => {
         animationDirection={true}
         addedId="contact"
       />
+      <ModalForm/>
     </div>
   );
 };
