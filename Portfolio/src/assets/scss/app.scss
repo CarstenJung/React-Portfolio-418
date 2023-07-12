@@ -213,7 +213,7 @@ html {
     font-weight: 300;
     top: 140px;
     right: 12%;
-    max-width: 1100px;
+    max-width: 900px;
     float: right;
   }
 
@@ -267,9 +267,8 @@ html {
 // DATA SLIDER
 .dataSlider {
   height: 1100vh;
-}
+  margin-top: 200px;
 
-.dataSlider {
   .dataSliderWrapper {
     display: flex;
     flex-flow: row nowrap;
