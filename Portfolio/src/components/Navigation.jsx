@@ -77,9 +77,6 @@ const Navigation = () => {
               <a href="#education">Education</a>
             </li>
             <li>
-              <a href="#portfolio">Portfolio</a>
-            </li>
-            <li>
               <a href="#skills">Skills</a>
             </li>
             <li>

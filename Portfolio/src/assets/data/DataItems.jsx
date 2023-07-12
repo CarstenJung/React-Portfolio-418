@@ -21,6 +21,7 @@ export const DataItems = [
     subdescription: "Graded Course • 2 Semester",
     link: "https://credentials.edx.org/credentials/3210ce4eff644a2b8839ef5be07ea334/",
     image: professionalCertificateCS50,
+    btnText: "View Certificate"
   },
   {
     id: 2,
@@ -29,7 +30,8 @@ export const DataItems = [
     description: "HarvardX - Verified Certificate",
     subdescription: "Graded Course • 1 Semester",
     link: "https://courses.edx.org/certificates/752a5ca2d8274aa9bb59a410b7d3fe73",
-    image: CS50W
+    image: CS50W,
+    btnText: "View Certificate"
   },
   {
     id: 3,
@@ -38,7 +40,8 @@ export const DataItems = [
     description: "HarvardX - Verified Certificate",
     subdescription: "Graded Course • 1 Semester",
     link: "https://courses.edx.org/certificates/1ed007a7e68c4a11b5a686285850ec01",
-    image: CS50X
+    image: CS50X,
+    btnText: "View Certificate"
   },
   {
     id: 4,
@@ -47,7 +50,8 @@ export const DataItems = [
     description: "Meta - Course Certificate",
     subdescription: "Graded Course • Non-Credit",
     link: "https://www.coursera.org/account/accomplishments/verify/PRLYME3J48UX",
-    image: ADVANCEDREACT
+    image: ADVANCEDREACT,
+    btnText: "View Certificate"
   },
   {
     id: 5,
@@ -56,7 +60,8 @@ export const DataItems = [
     description: "Udemy - Certificate of Completion",
     subdescription: "Online course • 11 hours",
     link: "ude.my/UC-Z484ZM",
-    image: JAVASCRIPT
+    image: JAVASCRIPT,
+    btnText: "View Certificate"
   },
   {
     id: 6,
@@ -65,7 +70,8 @@ export const DataItems = [
     description: "Udemy - Certificate of Completion",
     subdescription: "Online course • 11.5 hours",
     link: "ude.my/UC-MOYLTKZ",
-    image: ADOBEXD
+    image: ADOBEXD,
+    btnText: "View Certificate"
   },
   {
     id: 7,
@@ -74,42 +80,57 @@ export const DataItems = [
     description: "Udemy - Certificate of Completion",
     subdescription: "Online course • 16 hours",
     link: "ude.my/UC-E7SY10",
-    image: HTMLCSS
+    image: HTMLCSS,
+    btnText: "View Certificate"
   },
   {
     id: 8,
+    title: "Sales & CV",
+    subtitle: "",
+    description: "",
+    subdescription: "",
+    link: "",
+    image: "",
+    btnText: "View CV"
+  },
+  {
+    id: 9,
     title: "Kreatifabrik",
     subtitle: "Website for a marketing and advertising agency",
     description: "WordPress website created with DIVI, HTML, CSS and Java Script",
     subdescription: "Effects with GSAP • Green Sock Animation",
     link: "https://kreatifabrik.de/",
     image: KREATIFABRIK,
+    btnText: "Visit Website"
   },
   {
-    id: 9,
+    id: 10,
     title: "Petersen",
     subtitle: "Company page of a craft market",
     description: "WordPress website created with DIVI, HTML, CSS and Java Script",
     subdescription: "Effects with GSAP • Green Sock Animation",
     link: "https://petersen-vs.de/",
     image: PETERSEN,
+    btnText: "Visit Website"
   },
   {
-    id: 10,
+    id: 11,
     title: "Snapers",
     subtitle: "Online shop for e-shishas",
     description: "Onlineshop created with Shopify",
     subdescription: "Adjusted with Liquid • Green Sock Animation",
     link: "https://www.snapers.de/",
     image: SNAPERS,
+    btnText: "Visit Shop"
   },
   {
-    id: 11,
+    id: 12,
     title: "Kieninger",
     subtitle: "Company page of a consulting agency",
     description: "WordPress website created with DIVI, HTML, CSS and Java Script",
     subdescription: "Effects with GSAP • Green Sock Animation",
     link: "https://kieninger-consulting.ch/",
     image: KIENINGER,
+    btnText: "Visit Website"
   }
 ]

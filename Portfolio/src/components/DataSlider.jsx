@@ -1,59 +1,40 @@
 import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
 
-const DataSlider = ({
-  currentItem,
-  setCurrentItem,
-  btnText,
-  dataItem,
-}) => {
+const DataSlider = ({ currentItem, setCurrentItem, dataItem }) => {
   const inViewRef = useRef(null);
   const [textInView, setTextInView] = useState(false);
 
   useEffect(() => {
     let intersectingCount = 0;
 
-    if (inViewRef.current) {
-      for (let child of inViewRef.current.children) {
-        // Set initial opacity to 0 for each child through GSAP
-        gsap.set(child, { opacity: 0 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.getAttribute("data-id");
+          const item = dataItem.find((item) => item.id === Number(id));
+
+          if (entry.isIntersecting) {
+            intersectingCount++;
+
+            if (item) {
+              setTextInView(false);
+              setTimeout(() => {
+                setCurrentItem(item);
+                setTextInView(true);
+              }, 0);
+            }
+          } else if (!entry.isIntersecting) {
+            intersectingCount = Math.max(0, intersectingCount - 1);
+            if (intersectingCount === 0 && item) {
+              setTextInView(false);
+            }
+          }
+        });
+      },
+      {
+        rootMargin: "-50% 0px -50% 0px",
       }
-    }
-
- const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      const id = entry.target.getAttribute("data-id");
-      const item = dataItem.find((item) => item.id === Number(id));
-
-      if (entry.isIntersecting) {
-        intersectingCount++;
-
-        if (item) {
-          setTextInView(false);
-          setTimeout(() => {
-            setCurrentItem(item);
-            setTextInView(true);
-
-          }, 0);
-        }
-
-        // Animate opacity to 1 when the element is intersecting
-        gsap.fromTo(entry.target, { opacity: 0}, { opacity: 1, duration: 1.5});
-
-      } else if (!entry.isIntersecting) {
-        intersectingCount = Math.max(0, intersectingCount - 1);
-        if (intersectingCount === 0 && item) {
-          setTextInView(false);
-        }
-      }
-    });
-  },
-  {
-    rootMargin: "-50% 0px -50% 0px",
-  }
-);
-
+    );
 
     if (inViewRef.current) {
       for (let child of inViewRef.current.children) {
@@ -70,26 +51,57 @@ const DataSlider = ({
     };
   }, [currentItem]);
 
-
-
   return (
-    <div className="dataSlider section">
+    <div className="dataSlider section" id="education">
       <div className="dataSliderWrapper">
         <div className="dataSliderLeft">
           {textInView && (
-          <div className="dataTextContainer" key={currentItem.id}>
-            <h1>{currentItem.title}</h1>
-            <h3>{currentItem.subtitle}</h3>
-            <p>{currentItem.description}</p>
-            <p>{currentItem.subdescription}</p>
-            <a href={currentItem.link} target="_blank" rel="noopener noreferrer">
-              {btnText}
-            </a>
-          </div>
+            <div className="dataTextContainer" key={currentItem.id}>
+              <div className="dataTextItem">
+                <div className="counterWrapper">
+                <span className="bar"></span>
+                <p className="counterItem">{currentItem.id}</p>
+                </div>
+              </div>
+              <div className="dataTextItem">
+                <h1>
+                  <span className="bar"></span>
+                  <span className="textItem">{currentItem.title}</span>
+                </h1>
+              </div>
+              <div className="dataTextItem">
+              <h3>
+                <span className="bar"></span>
+                <span className="textItem">{currentItem.subtitle}</span>
+              </h3>
+              </div>
+              <div className="dataTextItem">
+              <p>
+                <span className="bar"></span>
+                <span className="textItem">{currentItem.description}</span>
+              </p>
+              </div>
+              <div className="dataTextItem">
+              <p>
+                <span className="bar"></span>
+                <span className="textItem">{currentItem.subdescription}</span>
+              </p>
+              </div>
+              <div className="dataTextItem">
+              <a
+                href={currentItem.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="bar"></span>
+                <span className="textItem">{currentItem.btnText}</span>
+              </a>
+            </div>
+            </div>
           )}
         </div>
 
-        <div className="dataSliderRight" ref={inViewRef} >
+        <div className="dataSliderRight" ref={inViewRef}>
           {dataItem.map((item) => (
             <div key={item.id} data-id={item.id} className="slideImgWrapper">
               <img

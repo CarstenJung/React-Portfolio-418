@@ -13,7 +13,7 @@ import { DataItems } from "./assets/data/DataItems";
 
 const App = () => {
   const [currentDataItem, setCurrentDataItem] = useState(DataItems[0]);
-  
+
   // MODAL FORM
   const [open, setOpen] = useState(false);
 
@@ -44,16 +44,7 @@ const App = () => {
         currentItem={currentDataItem}
         setCurrentItem={setCurrentDataItem}
         dataItem={DataItems}
-        btnText="See Certificate"
       />
-      {/* Portfolio section components */}
-      {/* <DataSlider
-        currentItem={currentPortfolio}
-        setCurrentItem={setCurrentPortfolio}
-        dataItem={PortfolioItems}
-        btnText="Visit Website"
-        addedId="portfolio"
-      /> */}
       {/* Skills section components */}
       <TextSlideSection
         title="SKILLS"

@@ -75,36 +75,44 @@ html {
 
 @keyframes hideBox {
   0% {
+    left: 0;
     width: 0;
   }
 
   25% {
+    left: 0;
     width: 50%;
   }
 
   50% {
+    left: 0;
     width: 100%;
   }
 
   75% {
+    left: 50%;
     width: 50%;
   }
 
   100% {
+    left: 100%;
     width: 0%;
   }
 }
 
 @keyframes revealText {
-  from {
+  0% {
     opacity: 0;
   }
 
-  to {
+  50% {
+    opacity: 0;
+  }
+
+  100% {
     opacity: 1;
   }
 }
-
 
 // Navigation
 .navBtn,
@@ -252,7 +260,7 @@ html {
         max-width: 110px;
         max-height: 110px;
         cursor: pointer;
-        margin: 2rem
+        margin: 2rem;
       }
     }
 
@@ -266,8 +274,8 @@ html {
 
 // DATA SLIDER
 .dataSlider {
-  height: 1100vh;
-  margin-top: 200px;
+  height: 1200vh;
+  margin: 250px 0 200px 0;
 
   .dataSliderWrapper {
     display: flex;
@@ -284,43 +292,73 @@ html {
       background: transparent;
 
       .dataTextContainer {
-        animation: revealText 0.3s ease-out forwards;
-        //animation-delay: 1s;
-        opacity: 0;
         padding: 5rem;
 
-        h1 {
-          position: relative;
-          font-size: clamp(2rem, 2rem + 5vw, 8.4rem);
-          font-weight: 800;
-          margin-top: 30px;
+        .counterWrapper {
+          position: absolute;
+          top: 0;
+          left: 40px;
+          animation: revealText 1s ease-out forwards;
 
-          &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 100%;
-            background: #333;
-            animation: hideBox 1s ease-out forwards;
-            opacity: 1;
+          .counterItem {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0;
           }
         }
 
+        h1,
+        h3,
+        p,
+        a {
+          position: relative;
+          display: inline-block;
+        }
+
+        h1 .bar,
+        h3 .bar,
+        p .bar,
+        a .bar,
+        .counterWrapper .bar {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: #333;
+          animation: hideBox 1s ease-out forwards;
+        }
+
+        h1 .textItem,
+        h3 .textItem,
+        p .textItem,
+        a .textItem{
+          opacity: 0;
+          animation: revealText 1s ease-out forwards;
+        }
+
+        h1 {
+          font-size: clamp(2rem, 2rem + 5vw, 8.4rem);
+          font-weight: 800;
+          margin-top: 30px;
+        }
+
         h3 {
+          position: relative;
           font-weight: 500;
           font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
-          padding-top: 2rem;
+          margin-top: 2rem;
         }
 
         p {
+          position: relative;
           font-weight: 400;
           font-size: 1.25rem;
-          padding: 0.5rem 2rem 2rem 0;
+          margin: 0.5rem 2rem 2rem 0;
         }
 
         a {
+          position: relative;
           color: #333;
           text-decoration: underline;
           cursor: pointer;
@@ -363,13 +401,14 @@ html {
     outline: none;
   }
 
-  h1,p {
+  h1,
+  p {
     text-align: center;
-    padding: .1rem;
+    padding: 0.1rem;
   }
 
   p {
-    font-size: .8rem;
+    font-size: 0.8rem;
     font-weight: 500;
     margin-bottom: 1rem;
   }
@@ -383,14 +422,14 @@ html {
     font-size: 1.5rem;
   }
 
-
   .contactFormModal {
     display: flex;
     flex-direction: column;
     max-width: 400px;
     margin: auto;
 
-    input, textarea {
+    input,
+    textarea {
       margin-bottom: 1rem;
       border: 1px solid #333;
       font-size: 1rem;
@@ -399,7 +438,7 @@ html {
     }
 
     input {
-      padding: .2rem;
+      padding: 0.2rem;
     }
 
     textarea {
@@ -409,7 +448,7 @@ html {
 
     button {
       margin-top: 1rem;
-      padding: .7rem;
+      padding: 0.7rem;
       border: 1px solid #333;
       background: #333;
       color: #fff;
@@ -418,12 +457,11 @@ html {
       cursor: pointer;
       width: 100px;
       margin: auto;
-      transition: all .3s ease-in-out;
+      transition: all 0.3s ease-in-out;
 
       &:hover {
         background: #000;
       }
     }
-    
   }
 }
