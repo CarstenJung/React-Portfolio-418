@@ -1,5 +1,5 @@
 // Importing necessary React hooks
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Importing various icons for use in Contact section
 import MAIL from "../assets/img/icons/mail.png";
@@ -33,6 +33,8 @@ const TextSlideSection = ({
   // useRef hook to get a reference to the slideHeader span
   const bcgRef = useRef(null);
   const iconSkillsRef = useRef(null);
+   // Using useState to hold the current window width
+   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   // Function to animate the slideHeader span
   const animateSlideHeader = (element, animationDirection) => {
@@ -57,6 +59,9 @@ const TextSlideSection = ({
 
   // useEffect hook to animate the slideHeader span
   useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+
     if (bcgRef.current) {
       animateSlideHeader(bcgRef.current, animationDirection);
 
@@ -78,7 +83,7 @@ const TextSlideSection = ({
       }
     }
 
-    if (window.innerWidth < 768) {
+    if (windowWidth < 768) {
       if (bcgRef.current) {
         animateSlideHeader(bcgRef.current, animationDirection);
 
@@ -100,6 +105,9 @@ const TextSlideSection = ({
         }
       }
     }
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (

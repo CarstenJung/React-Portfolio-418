@@ -116,10 +116,11 @@ html {
 
 // Navigation
 .navBtn,
-.navigation {
+.navigationWrapper {
   position: fixed;
   z-index: 10;
   right: 30px;
+  top: 40px;
 }
 
 .navBtn {
@@ -153,7 +154,6 @@ html {
 
 .navigation {
   padding-top: 30px;
-  top: 40px;
 
   ul {
     list-style: none;
@@ -162,7 +162,7 @@ html {
       padding: 0.2rem 0;
       font-size: 1.25rem;
       font-weight: 500;
-      opacity: 0.9;
+      opacity: 0.8;
       cursor: pointer;
 
       a {
@@ -468,6 +468,14 @@ html {
 
 // Media Queries
 @media only screen and (max-width: 767px) {
+  .dataSliderRight {
+    opacity: 0;
+  }
+
+  .dataSliderLeft {
+    width: 100% !important;
+    z-index: 5;
+  }
   // TextSlideSection
   .textSlideSection {
     .slideHeader {
@@ -499,7 +507,7 @@ html {
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        margin-top: 10rem;
+        margin-top: 13rem;
 
         img {
           max-width: 70px;
@@ -511,20 +519,40 @@ html {
         .contactInformation {
           font-size: 1.8rem;
           text-align: center;
-          padding: 1rem 0 0 0;
+          padding: 3rem 0 0 0;
         }
       }
     }
   }
 
   // Contact Modal
-    .contactFormWrapper {
-      max-width: 90%;
+  .contactFormWrapper {
+    max-width: 90%;
 
-      button {
-        color: #333;
+    button {
+      color: #333;
+    }
+  }
+
+  // Navigation
+  .navigationWrapper {
+    left: 15px;
+    top: 0;
+
+    .navigation {
+      background: #fff;
+      width: 100vw;
+      padding: 0;
+      padding-top: 14px;
+
+      ul {
+        display: flex;
+
+        li {
+          margin: 0.4rem;
+          font-size: 1rem;
+        }
       }
     }
+  }
 }
-
-
