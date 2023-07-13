@@ -9,7 +9,7 @@ import HTMLCSS from '../img/certificates/html-css.jpg'
 
 import KREATIFABRIK from '../img/websites/KreatiFabrik.jpg'
 import PETERSEN from '../img/websites/Petersen.jpg'
-//import KIENINGER from '../img/websites/Kieninger.jpg'
+import KIENINGER from '../img/websites/Kieninger.jpg'
 import SNAPERS from '../img/websites/Snapers.jpg'
 
 export const DataItems = [
@@ -123,7 +123,7 @@ export const DataItems = [
     image: SNAPERS,
     btnText: "Visit Shop"
   },
-/*   {
+  {
     id: 12,
     title: "Kieninger",
     subtitle: "Company page of a consulting agency",
@@ -132,5 +132,5 @@ export const DataItems = [
     link: "https://kieninger-consulting.ch/",
     image: KIENINGER,
     btnText: "Visit Website"
-  } */
+  }
 ]
