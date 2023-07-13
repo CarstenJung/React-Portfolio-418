@@ -123,7 +123,7 @@ export const DataItems = [
     image: SNAPERS,
     btnText: "Visit Shop"
   },
-  {
+/*   {
     id: 12,
     title: "Kieninger",
     subtitle: "Company page of a consulting agency",
@@ -132,5 +132,5 @@ export const DataItems = [
     link: "https://kieninger-consulting.ch/",
     image: KIENINGER,
     btnText: "Visit Website"
-  }
+  } */
 ]
