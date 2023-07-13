@@ -9,7 +9,7 @@ import HTMLCSS from '../img/certificates/html-css.jpg'
 
 import KREATIFABRIK from '../img/websites/KreatiFabrik.jpg'
 import PETERSEN from '../img/websites/Petersen.jpg'
-import KIENINGER from '../img/websites/Kieninger.jpg'
+import KIENINGER from './img/websites/Kieninger.jpg'
 import SNAPERS from '../img/websites/Snapers.jpg'
 
 export const DataItems = [
