@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
 
 const DataSlider = ({ currentItem, setCurrentItem, dataItem }) => {
   const inViewRef = useRef(null);
