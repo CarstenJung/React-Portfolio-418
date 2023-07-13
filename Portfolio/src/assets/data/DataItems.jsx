@@ -132,5 +132,5 @@ export const DataItems = [
     link: "https://kieninger-consulting.ch/",
     image: KIENINGER,
     btnText: "Visit Website"
-  } */
+  }  */
 ]
