@@ -63,6 +63,12 @@ const DataSlider = ({ currentItem, setCurrentItem, dataItem }) => {
                 <p className="counterItem">{currentItem.id}</p>
                 </div>
               </div>
+              <div className="dataTextItemMobile">
+                <div className="dataMobileImage">
+                  <span className="bar"></span>
+                  <img style={{backgroundSize: "cover", maxWidth: "100%"}} src={currentItem.image} className="textItem" />
+                </div>
+              </div>
               <div className="dataTextItem">
                 <h1>
                   <span className="bar"></span>
