@@ -185,7 +185,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  //TODO align-items: center;
   text-align: center;
 
   h1 {
@@ -195,7 +195,7 @@ html {
   }
 
   p {
-    font-size: clamp(1rem, 1rem + 4vw, 3.2rem);
+    font-size: clamp(1rem, 1rem + 3vw, 3.2rem);
   }
 }
 
@@ -217,7 +217,7 @@ html {
     position: relative;
     display: block;
     z-index: 2;
-    font-size: clamp(1rem, 1rem + 3vw, 2.38rem);
+    font-size: clamp(1rem, 1rem + 1vw, 2.38rem);
     font-weight: 300;
     top: 140px;
     right: 12%;
@@ -332,7 +332,7 @@ html {
         h1 .textItem,
         h3 .textItem,
         p .textItem,
-        a .textItem{
+        a .textItem {
           opacity: 0;
           animation: revealText 1s ease-out forwards;
         }
@@ -465,3 +465,66 @@ html {
     }
   }
 }
+
+// Media Queries
+@media only screen and (max-width: 767px) {
+  // TextSlideSection
+  .textSlideSection {
+    .slideHeader {
+      font-size: 4rem;
+      margin-top: 15%;
+    }
+
+    .slideText {
+      max-width: 80%;
+      margin: auto;
+      position: static;
+      float: none;
+      margin-top: 45%;
+    }
+
+    .contactWrapper {
+      .iconContainer {
+        flex-wrap: wrap;
+
+        img {
+          max-width: 50px;
+          max-height: 50px;
+          flex-basis: 50%;
+        }
+      }
+
+      .contactIcons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10rem;
+
+        img {
+          max-width: 70px;
+          max-height: 70px;
+          flex-basis: 50%;
+          margin: 1.5rem;
+        }
+
+        .contactInformation {
+          font-size: 1.8rem;
+          text-align: center;
+          padding: 1rem 0 0 0;
+        }
+      }
+    }
+  }
+
+  // Contact Modal
+    .contactFormWrapper {
+      max-width: 90%;
+
+      button {
+        color: #333;
+      }
+    }
+}
+
+

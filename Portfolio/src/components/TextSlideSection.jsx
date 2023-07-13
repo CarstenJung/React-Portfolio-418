@@ -34,46 +34,34 @@ const TextSlideSection = ({
   const bcgRef = useRef(null);
   const iconSkillsRef = useRef(null);
 
-  useEffect(() => {
-    // Check for the animation direction
-    if (animationDirection) {
-      // Use GSAP to animate the slideHeader span from the start of the viewport to 10vw from the left
-      gsap.fromTo(
-        bcgRef.current,
-        { x: "0vw" },
-        {
-          x: "10vw",
-          ease: "Power2.easeInOut",
-          scrollTrigger: {
-            trigger: bcgRef.current,
-            start: "top bottom",
-            end: "bottom center",
-            scrub: 4,
-          },
-        }
-      );
-    } else {
-      // GSAP animation to animate the slideHeader span from the right end of the viewport to the middle
-      gsap.fromTo(
-        bcgRef.current,
-        { right: "0" },
-        {
-          left: "25%",
-          ease: "Power2.easeInOut",
-          scrollTrigger: {
-            trigger: bcgRef.current,
-            start: "top bottom",
-            end: "bottom center",
-            scrub: 4,
-          },
-        }
-      );
+  // Function to animate the slideHeader span
+  const animateSlideHeader = (element, animationDirection) => {
+    const animationProps = {
+      ease: "Power2.easeInOut",
+      scrollTrigger: {
+        trigger: element,
+        start: "top bottom",
+        end: "bottom center",
+        scrub: 4,
+      },
+    };
 
-      gsap.fromTo(
-        iconSkillsRef.current,
-        { x: "-30%" },
-        {
-          x: "-10%",
+    if (animationDirection) {
+      // Animation from the start of the viewport to 10vw from the left
+      gsap.fromTo(element, { x: "0vw" }, { x: "10vw", ...animationProps });
+    } else {
+      // Animation from the right end of the viewport to the middle
+      gsap.fromTo(element, { right: "0" }, { left: "25%", ...animationProps });
+    }
+  };
+
+  // useEffect hook to animate the slideHeader span
+  useEffect(() => {
+    if (bcgRef.current) {
+      animateSlideHeader(bcgRef.current, animationDirection);
+
+      if (!animationDirection && iconSkillsRef.current) {
+        const iconAnimationProps = {
           ease: "Power2.easeInOut",
           scrollTrigger: {
             trigger: iconSkillsRef.current,
@@ -81,8 +69,36 @@ const TextSlideSection = ({
             end: "bottom center",
             scrub: 4,
           },
+        };
+        gsap.fromTo(
+          iconSkillsRef.current,
+          { x: "-30%" },
+          { x: "-10%", ...iconAnimationProps }
+        );
+      }
+    }
+
+    if (window.innerWidth < 768) {
+      if (bcgRef.current) {
+        animateSlideHeader(bcgRef.current, animationDirection);
+
+        if (!animationDirection && iconSkillsRef.current) {
+          const iconAnimationProps = {
+            ease: "Power2.easeInOut",
+            scrollTrigger: {
+              trigger: iconSkillsRef.current,
+              start: "top bottom",
+              end: "bottom center",
+              scrub: 4,
+            },
+          };
+          gsap.fromTo(
+            iconSkillsRef.current,
+            { x: "-30%" },
+            { x: "-5%", ...iconAnimationProps }
+          );
         }
-      );
+      }
     }
   }, []);
 
@@ -94,16 +110,23 @@ const TextSlideSection = ({
       {!showIconsContact && <span className="slideText">{text}</span>}
       {showIconsContact && (
         <div className="contactWrapper">
-          <div className="iconContainer">
+          <div className="iconContainer contactIcons">
             <img src={MAIL} alt="Mail" onClick={handleOpen} />
-            <a href="https://calendly.com/carstenjung" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://calendly.com/carstenjung"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src={CALENDLY} alt="Calendly" />
             </a>
             <a href="tel:017660145188" rel="noopener noreferrer">
-            <img src={CALL} alt="Phone" />
+              <img src={CALL} alt="Phone" />
             </a>
-            <a href="https://www.linkedin.com/in/carsten-jung-44a760177" target="_blank">
-            <img src={LINKEDIN} alt="LinkedIN"/>
+            <a
+              href="https://www.linkedin.com/in/carsten-jung-44a760177"
+              target="_blank"
+            >
+              <img src={LINKEDIN} alt="LinkedIN" />
             </a>
             <div className="contactInformation">
               <p className="contactItem">+49 (0)176 / 60145188</p>

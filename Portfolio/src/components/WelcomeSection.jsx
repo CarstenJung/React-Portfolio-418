@@ -23,7 +23,8 @@ const WelcomeSection = () => {
 
     gsap.fromTo(underlineRef.current, {opacity: 0, y: 20}, {opacity: 1, y:0, duration: .7, delay: .8});
   } else {
-    gsap.fromTo(textRef.current, {opacity: 0, y: 20}, {opacity: 1, y:0, duration: .7, delay: .8});
+    gsap.fromTo(textRef.current, {opacity: 0, y: 20}, {opacity: 1, y:0, duration: .5, delay: .5});
+    gsap.fromTo(underlineRef.current, {opacity: 0, y: 20}, {opacity: 1, y:0, duration: .5, delay: 1});
   }
   }, []);
 
