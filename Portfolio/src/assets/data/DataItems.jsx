@@ -12,7 +12,7 @@ import PETERSEN from "../img/websites/Petersen.jpg";
 import KIENINGER from "../img/websites/Kieninger.jpg";
 import SNAPERS from "../img/websites/Snapers.jpg";
 
-export const DataItems = [
+export const DataItems = [ 
   {
     id: 1,
     title: "HarvardX",
