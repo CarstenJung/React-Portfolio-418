@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
 
 const DataSlider = ({ currentItem, setCurrentItem, dataItem }) => {
   const inViewRef = useRef(null);
@@ -66,7 +67,7 @@ const DataSlider = ({ currentItem, setCurrentItem, dataItem }) => {
               <div className="dataTextItemMobile">
                 <div className="dataMobileImage">
                   <span className="bar"></span>
-                  <img style={{backgroundSize: "cover", maxWidth: "100%"}} src={currentItem.image} className="textItem" />
+                  <img src={currentItem.image} className="textItem" />
                 </div>
               </div>
               <div className="dataTextItem">
