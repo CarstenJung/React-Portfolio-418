@@ -34,7 +34,7 @@ const ModalForm = ({ open, handleClose }) => {
               }, 400);
             }}
           >
-            <Form className="contactFormModal" method="POST" data-netlify="true">
+            <Form className="contactFormModal" method="POST" netlify>
               <label htmlFor="name">Name</label>
               <Field name="name" type="text" id="name" />
               <ErrorMessage name="name" component="div" />
