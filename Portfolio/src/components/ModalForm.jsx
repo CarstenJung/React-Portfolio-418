@@ -1,7 +1,6 @@
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import {  Modal } from "@mui/material";
-import netlify from "netlify";
 
 
 const ModalForm = ({ open, handleClose }) => {
@@ -12,16 +11,6 @@ const ModalForm = ({ open, handleClose }) => {
       .required("Email is required"),
     message: Yup.string().required("Message is required"),
   });
-
-  useEffect(() => {
-    if (open) {
-      // Enable Netlify form handling when the modal is opened
-      if (window.netlify) {
-        window.netlifyForm();
-      }
-    }
-  }, [open]);
-  
 
   return (
     <div>
