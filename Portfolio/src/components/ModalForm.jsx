@@ -22,7 +22,7 @@ const ModalForm = ({ open, handleClose }) => {
         <div className="contactFormWrapper">
           <button className="closeModal" onClick={handleClose}>x</button>
           <h1 id="modal-title">Get in Touch</h1>
-          <p>In Search of My 'TypeError: Team Not Found'</p>
+          <p>In Search of My 'TypeError: Company Not Found'</p>
           <Formik
             initialValues={{ name: "", company: "", email: "", message: "" }}
             validationSchema={validationSchema}
@@ -34,7 +34,7 @@ const ModalForm = ({ open, handleClose }) => {
               }, 400);
             }}
           >
-            <Form className="contactFormModal">
+            <Form className="contactFormModal" method="POST" data-netlify="true">
               <label htmlFor="name">Name</label>
               <Field name="name" type="text" id="name" />
               <ErrorMessage name="name" component="div" />
