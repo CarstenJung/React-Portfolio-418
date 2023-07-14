@@ -32,7 +32,7 @@ const ModalForm = ({ open, handleClose }) => {
               }, 400);
             }}
           >
-            <Form className="contactFormModal" name="contact-form" netlify>
+            <Form className="contactFormModal" data-netlify="true" name="contact-form">
               <label htmlFor="name">Name</label>
               <Field name="name" type="text" id="name" />
               <ErrorMessage name="name" component="div" />
