@@ -1,39 +1,37 @@
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import {  Modal } from "@mui/material";
+import { Modal } from "@mui/material";
 
 const ModalForm = ({ open, handleClose }) => {
   const validationSchema = Yup.object().shape({
     name: Yup.string().required("Name is required"),
-    email: Yup.string()
-      .email("Invalid email address")
-      .required("Email is required"),
+    email: Yup.string().email("Invalid email address").required("Email is required"),
     message: Yup.string().required("Message is required"),
   });
 
+  const handleFormSubmit = (values, { setSubmitting }) => {
+    setTimeout(() => {
+      /* alert(JSON.stringify(values, null, 2)); */
+      setSubmitting(false);
+      handleClose();
+    }, 400);
+  };
+
   return (
     <div>
-      <Modal
-        open={open}
-        onClose={handleClose}
-      >
+      <Modal open={open} onClose={handleClose}>
         <div className="contactFormWrapper">
           <button className="closeModal" onClick={handleClose}>x</button>
           <h1 id="modal-title">Get in Touch</h1>
           <p>In Search of My 'TypeError: Company Not Found'</p>
+
           <Formik
             initialValues={{ name: "", company: "", email: "", message: "" }}
             validationSchema={validationSchema}
-            onSubmit={(values, { setSubmitting }) => {
-              setTimeout(() => {
-                /* alert(JSON.stringify(values, null, 2)); */
-                setSubmitting(false);
-                handleClose();
-              }, 400);
-            }}
+            onSubmit={handleFormSubmit}
           >
             <Form method="POST" className="contactFormModal" data-netlify="true" name="contact-form">
-            <input type="hidden" name="form-name" value="contact-form" />
+              <input type="hidden" name="form-name" value="contact-form" />
               <label htmlFor="name">Name</label>
               <Field name="name" type="text" id="name" />
               <ErrorMessage name="name" component="div" />
