@@ -32,7 +32,7 @@ const ModalForm = ({ open, handleClose }) => {
               }, 400);
             }}
           >
-            <Form action="https://418.carstenjung.io/.netlify/functions/contact-form" className="contactFormModal" data-netlify="true" name="contact-form">
+            <Form method="POST" className="contactFormModal" data-netlify="true" name="contact-form">
             <input type="hidden" name="form-name" value="contact-form" />
               <label htmlFor="name">Name</label>
               <Field name="name" type="text" id="name" />
