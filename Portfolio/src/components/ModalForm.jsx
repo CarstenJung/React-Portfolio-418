@@ -16,8 +16,6 @@ const ModalForm = ({ open, handleClose }) => {
       <Modal
         open={open}
         onClose={handleClose}
-        /* aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description" */
       >
         <div className="contactFormWrapper">
           <button className="closeModal" onClick={handleClose}>x</button>
@@ -34,7 +32,7 @@ const ModalForm = ({ open, handleClose }) => {
               }, 400);
             }}
           >
-            <Form className="contactFormModal" method="POST" netlify>
+            <Form className="contactFormModal" data-netlify="true" name="contact-form">
               <label htmlFor="name">Name</label>
               <Field name="name" type="text" id="name" />
               <ErrorMessage name="name" component="div" />
