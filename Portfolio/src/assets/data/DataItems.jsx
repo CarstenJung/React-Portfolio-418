@@ -12,7 +12,7 @@ import PETERSEN from "../img/websites/Petersen.jpg";
 import KIENINGER from "../img/websites/Kieninger.jpg";
 import SNAPERS from "../img/websites/Snapers.jpg";
 
-import CV from "../img/cv/CV.jpg";
+import CVImage from "../img/cv/CV.jpg";
 import CurriculumVitae from "../img/cv/CurriculumVitae.pdf";
 
 export const DataItems = [
@@ -96,7 +96,7 @@ export const DataItems = [
     description: "Swapped closing deals for creating breakpoints.",
     subdescription: "These days, I make responsive designs respond to me, not clients.",
     link: CurriculumVitae,
-    image: CV,
+    image: CVImage,
     small: true,
     btnText: "View CV",
   },
