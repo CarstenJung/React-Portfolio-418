@@ -37,8 +37,7 @@ const ModalForm = ({ open, handleClose }) => {
             <input type="hidden" name="form-name" value="contact-form" />
               <label htmlFor="name">Name</label>
               <Field name="name" type="text" id="name" />
-              <ErrorMessage name="name" component="div" />
-              
+              <ErrorMessage name="name" component="div" />          
               <label htmlFor="company">Company</label>
               <Field name="company" type="text" id="company" />
               <ErrorMessage name="company" component="div" />
