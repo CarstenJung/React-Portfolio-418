@@ -12,8 +12,8 @@ import PETERSEN from "../img/websites/Petersen.jpg";
 import KIENINGER from "../img/websites/Kieninger.jpg";
 import SNAPERS from "../img/websites/Snapers.jpg";
 
-import CVImage from "../img/cv/CVImage.jpg";
-import CurriculumVitae from "../img/cv/CurriculumVitae.pdf";
+import CVImage from "../img/CV/CVImage.jpg";
+import CurriculumVitae from "../img/CV/CurriculumVitae.pdf";
 
 export const DataItems = [
   {
