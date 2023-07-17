@@ -583,6 +583,11 @@ html {
       .dataTextItemMobile {
         display: block;
 
+        .dataSliderImageSmall {
+            max-width: 50%;
+            animation: slideIn 1s ease-out forwards;
+          }
+
         img {
           background-size: cover;
           max-width: 80%;

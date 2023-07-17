@@ -66,7 +66,7 @@ const DataSlider = ({ currentItem, setCurrentItem, dataItem }) => {
               <div className="dataTextItemMobile">
                 <div className="dataMobileImage">
                   <span className="bar"></span>
-                  <img src={currentItem.image} className="textItem" />
+                  <img className={`textItem ${currentItem.small ? "dataSliderImageSmall" : null}`} src={currentItem.image} />
                 </div>
               </div>
               <div className="dataTextItem">
