@@ -12,6 +12,9 @@ import PETERSEN from "../img/websites/Petersen.jpg";
 import KIENINGER from "../img/websites/Kieninger.jpg";
 import SNAPERS from "../img/websites/Snapers.jpg";
 
+import CV from "../img/cv/CV.jpg";
+import CurriculumVitae from "../img/cv/CurriculumVitae.pdf";
+
 export const DataItems = [
   {
     id: 1,
@@ -88,12 +91,13 @@ export const DataItems = [
   },
   {
     id: 8,
-    title: "Sales & CV",
-    subtitle: "",
-    description: "",
-    subdescription: "",
-    link: "",
-    image: "",
+    title: "CV",
+    subtitle: "Professional Experience and Qualifications",
+    description: "Swapped closing deals for creating breakpoints.",
+    subdescription: "These days, I make responsive designs respond to me, not clients.",
+    link: CurriculumVitae,
+    image: CV,
+    small: true,
     btnText: "View CV",
   },
   {

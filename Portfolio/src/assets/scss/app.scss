@@ -380,6 +380,10 @@ html {
         height: 100vh;
         position: relative;
 
+        .dataSliderImageSmall {
+          max-width: 40%;
+        }
+
         img {
           display: block;
           margin: auto;

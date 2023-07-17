@@ -59,8 +59,8 @@ const DataSlider = ({ currentItem, setCurrentItem, dataItem }) => {
             <div className="dataTextContainer" key={currentItem.id}>
               <div className="dataTextItem">
                 <div className="counterWrapper">
-                <span className="bar"></span>
-                <p className="counterItem">{currentItem.id}</p>
+                  <span className="bar"></span>
+                  <p className="counterItem">{currentItem.id}</p>
                 </div>
               </div>
               <div className="dataTextItemMobile">
@@ -76,33 +76,33 @@ const DataSlider = ({ currentItem, setCurrentItem, dataItem }) => {
                 </h1>
               </div>
               <div className="dataTextItem">
-              <h3>
-                <span className="bar"></span>
-                <span className="textItem">{currentItem.subtitle}</span>
-              </h3>
+                <h3>
+                  <span className="bar"></span>
+                  <span className="textItem">{currentItem.subtitle}</span>
+                </h3>
               </div>
               <div className="dataTextItem">
-              <p>
-                <span className="bar"></span>
-                <span className="textItem">{currentItem.description}</span>
-              </p>
+                <p>
+                  <span className="bar"></span>
+                  <span className="textItem">{currentItem.description}</span>
+                </p>
               </div>
               <div className="dataTextItem">
-              <p>
-                <span className="bar"></span>
-                <span className="textItem">{currentItem.subdescription}</span>
-              </p>
+                <p>
+                  <span className="bar"></span>
+                  <span className="textItem">{currentItem.subdescription}</span>
+                </p>
               </div>
               <div className="dataTextItem">
-              <a
-                href={currentItem.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="bar"></span>
-                <span className="textItem">{currentItem.btnText}</span>
-              </a>
-            </div>
+                <a
+                  href={currentItem.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="bar"></span>
+                  <span className="textItem">{currentItem.btnText}</span>
+                </a>
+              </div>
             </div>
           )}
         </div>
@@ -111,9 +111,9 @@ const DataSlider = ({ currentItem, setCurrentItem, dataItem }) => {
           {dataItem.map((item) => (
             <div key={item.id} data-id={item.id} className="slideImgWrapper">
               <img
+                className={item.small ? "dataSliderImageSmall" : null}
                 src={item.image}
                 alt={item.title}
-                className="dataSliderImage"
               />
             </div>
           ))}
