@@ -41,7 +41,7 @@ const ModalForm = ({ open, handleClose }) => {
               name="contact-form"
             >
               <Field type="hidden" name="bot-field" />
-              <Field type="hidden" name="form-name" />
+              <Field type="hidden" name="contact-form" />
               <label htmlFor="name">Name</label>
               <Field name="name" type="text" id="name" />
               <ErrorMessage name="name" component="div" />
