@@ -7,6 +7,7 @@ import { useState } from "react";
 
 const ModalForm = ({ open, handleClose }) => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [showErrorMessage, setShowErrorMessage] = useState(false);
 
   const validationSchema = Yup.object().shape({
     name: Yup.string().required("Name is required"),
@@ -40,6 +41,10 @@ const ModalForm = ({ open, handleClose }) => {
     } catch (e) {
       console.log(e.message);
       setSubmitting(false);
+      setShowErrorMessage(true);
+      setTimeout(() => {
+        setShowErrorMessage(false);
+      }, 2000);
     }
   };
 
@@ -87,6 +92,11 @@ const ModalForm = ({ open, handleClose }) => {
               {showSuccessMessage && (
                 <div className="success-message">
                   Your message has been sent successfully!
+                </div>
+              )}
+              {showErrorMessage && (
+                <div className="error-message">
+                  Something went wrong. Please try again later.
                 </div>
               )}
               <button type="submit">Submit</button>
