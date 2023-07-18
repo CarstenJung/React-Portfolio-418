@@ -16,7 +16,7 @@ const ModalForm = ({ open, handleClose }) => {
     message: Yup.string().required("Message is required"),
   });
 
-  const handleSubmit = async (values, { setSubmitting }) => {
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     const data = {
       ...values,
       "form-name": "contactForm",
