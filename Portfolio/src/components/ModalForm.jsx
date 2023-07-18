@@ -27,7 +27,7 @@ const ModalForm = ({ open, handleClose }) => {
               "form-name": "contact-form",
             }}
             validationSchema={validationSchema}
-            onSubmit={(values, { setSubmitting }) => {
+            onSubmit={(values, { setSubmitting, submitForm }) => {
               setTimeout(() => {
                 setSubmitting(false);
                 handleClose();
