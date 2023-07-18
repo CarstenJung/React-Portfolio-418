@@ -23,7 +23,7 @@ const ModalForm = ({ open, handleClose }) => {
           <Formik
             initialValues={{
               "bot-field": "",
-              "form-name": "contact-form",
+              "form-name": "contactForm",
               name: "",
               company: "",
               email: "",
@@ -41,10 +41,10 @@ const ModalForm = ({ open, handleClose }) => {
               className="contactFormModal"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              name="contact-form"
+              name="contactForm"
             >
               <Field type="hidden" name="bot-field" />
-              <Field type="hidden" name="form-name" value="contact-form" />
+              <Field type="hidden" name="form-name" />
               <label htmlFor="name">Name</label>
               <Field name="name" type="text" id="name" />
               <ErrorMessage name="name" component="div" />
