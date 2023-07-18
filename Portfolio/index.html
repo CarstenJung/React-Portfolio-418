@@ -11,21 +11,23 @@
     <title>Portfolio - Carsten Jung</title>
   </head>
   <body>
+    <form
+      action="/"
+      data-netlify="true"
+      hidden
+      name="contact-form"
+      netlify-honeypot="bot-field"
+    >
+      <input type="text" name="form-name" value="contact-form" />
+      <input name="name" type="text" id="name" value="" />
+      <input name="company" type="text" id="company" value="" />
+      <input name="email" type="email" id="email" value="" />
+      <textarea name="message" id="message"></textarea>
+      <button type="submit">Submit</button>
+      <input name="bot-field" type="hidden" />
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-
-      <form action="/" data-netlify="true" hidden name="contact-form" netlify-honeypot="bot-field">
-        <input type="text" name="form-name" value="contact-form" />
-        <label for="name">Name</label>
-        <input name="name" type="text" id="name" value="" />
-        <label for="company">Company</label>
-        <input name="company" type="text" id="company" value="" />
-        <label for="email">Email</label>
-        <input name="email" type="email" id="email" value="" />
-        <label for="message">Message</label>
-        <textarea name="message" id="message"></textarea>
-        <button type="submit">Submit</button>
-        <input name="bot-field" type="hidden" />
-      </form>
   </body>
 </html>

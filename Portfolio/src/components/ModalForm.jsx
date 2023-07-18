@@ -24,9 +24,14 @@ const ModalForm = ({ open, handleClose }) => {
             initialValues={{
               "bot-field": "",
               "form-name": "contact-form",
+              name: "",
+              company: "",
+              email: "",
+              message: "",
             }}
             validationSchema={validationSchema}
             onSubmit={(values, { setSubmitting, submitForm }) => {
+              setSubmitting(true);
               setTimeout(() => {
                 setSubmitting(false);
                 handleClose();
@@ -39,6 +44,7 @@ const ModalForm = ({ open, handleClose }) => {
               method="POST"
               className="contactFormModal"
               data-netlify="true"
+              data-netlify-honeypot="bot-field"
               name="contact-form"
             >
               <Field type="hidden" name="bot-field" />
