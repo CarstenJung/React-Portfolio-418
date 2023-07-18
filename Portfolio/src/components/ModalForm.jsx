@@ -1,6 +1,7 @@
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { Modal } from "@mui/material";
+import {  Modal } from "@mui/material";
+
 
 const ModalForm = ({ open, handleClose }) => {
   const validationSchema = Yup.object().shape({
@@ -13,18 +14,19 @@ const ModalForm = ({ open, handleClose }) => {
 
   return (
     <div>
-      <Modal open={open} onClose={handleClose}>
+      <Modal
+        open={open}
+        onClose={handleClose}
+      >
         <div className="contactFormWrapper">
-          <button className="closeModal" onClick={handleClose}>
-            x
-          </button>
+          <button className="closeModal" onClick={handleClose}>x</button>
           <h1 id="modal-title">Get in Touch</h1>
           <p>In Search of My 'TypeError: Company Not Found'</p>
           <Formik
             initialValues={{
-              "bot-field": "",
-              "form-name": "contact-form",
-            }}
+          "bot-field": "",
+          "form-name": "contact-form"
+          }}
             validationSchema={validationSchema}
             onSubmit={(values, { setSubmitting }) => {
               setTimeout(() => {
@@ -34,14 +36,8 @@ const ModalForm = ({ open, handleClose }) => {
               }, 400);
             }}
           >
-            <Form
-              method="POST"
-              className="contactFormModal"
-              data-netlify="true"
-              name="contact-form"
-            >
-              <Field type="hidden" name="bot-field" />
-              <Field type="hidden" name="contact-form" />
+            <Form method="POST" className="contactFormModal" data-netlify="true" name="contact-form">
+            <input type="hidden" name="contact-form" value="contact-form" />
               <label htmlFor="name">Name</label>
               <Field name="name" type="text" id="name" />
               <ErrorMessage name="name" component="div" />
