@@ -5,6 +5,8 @@ import axios from "axios";
 import qs from "qs";
 
 const ModalForm = ({ open, handleClose }) => {
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
   const validationSchema = Yup.object().shape({
     name: Yup.string().required("Name is required"),
     email: Yup.string()
@@ -28,7 +30,11 @@ const ModalForm = ({ open, handleClose }) => {
     try {
       await axios(options);
       setSubmitting(false);
-      handleClose();
+      setShowSuccessMessage(true);
+      setTimeout(() => {
+        handleClose();
+        setShowSuccessMessage(false);
+      }, 2000);
     } catch (e) {
       console.log(e.message);
       setSubmitting(false);
@@ -76,7 +82,11 @@ const ModalForm = ({ open, handleClose }) => {
               <label htmlFor="message">Message</label>
               <Field name="message" component="textarea" id="message" />
               <ErrorMessage name="message" component="div" />
-
+              {showSuccessMessage && (
+                <div className="success-message">
+                  Your message has been sent successfully!
+                </div>
+              )}
               <button type="submit">Submit</button>
             </Form>
           </Formik>
