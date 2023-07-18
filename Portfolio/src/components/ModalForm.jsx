@@ -36,7 +36,6 @@ const ModalForm = ({ open, handleClose }) => {
               className="contactFormModal"
               data-netlify="true"
               name="contact-form"
-              onSubmit={handleSubmit}
             >
               <Field type="hidden" name="bot-field" />
               <Field type="hidden" name="form-name" />
