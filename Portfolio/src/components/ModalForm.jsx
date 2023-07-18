@@ -44,6 +44,7 @@ const ModalForm = ({ open, handleClose }) => {
       setSubmitting(false);
       setShowErrorMessage(true);
       setTimeout(() => {
+        handleClose();
         setShowErrorMessage(false);
       }, 2000);
     }
