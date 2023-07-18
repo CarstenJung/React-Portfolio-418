@@ -30,7 +30,6 @@ const ModalForm = ({ open, handleClose }) => {
       url: "/",
     };
     try {
-      throw new Error('Test error');
       await axios(options);
       setSubmitting(false);
       resetForm();
