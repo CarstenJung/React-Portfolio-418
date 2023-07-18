@@ -1,6 +1,8 @@
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Modal } from "@mui/material";
+import axios from "axios";
+import qs from "qs";
 
 const ModalForm = ({ open, handleClose }) => {
   const validationSchema = Yup.object().shape({
@@ -10,6 +12,28 @@ const ModalForm = ({ open, handleClose }) => {
       .required("Email is required"),
     message: Yup.string().required("Message is required"),
   });
+
+  const handleSubmit = async (values, { setSubmitting }) => {
+    const data = {
+      ...values,
+      "form-name": "contactForm",
+      "bot-field": "",
+    };
+    const options = {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      data: qs.stringify(data),
+      url: "/",
+    };
+    try {
+      await axios(options);
+      setSubmitting(false);
+      handleClose();
+    } catch (e) {
+      console.log(e.message);
+      setSubmitting(false);
+    }
+  };
 
   return (
     <div>
@@ -22,33 +46,13 @@ const ModalForm = ({ open, handleClose }) => {
           <p>In Search of My 'TypeError: Company Not Found'</p>
           <Formik
             initialValues={{
-              "bot-field": "",
-              "form-name": "contactForm",
               name: "",
               company: "",
               email: "",
               message: "",
             }}
             validationSchema={validationSchema}
-            onSubmit={(values, { setSubmitting }) => {
-              fetch("/", {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/x-www-form-urlencoded",
-                },
-                body: encode({ "form-name": "contactForm", ...values }),
-              })
-                .then(() => {
-                  setSubmitting(false);
-                  handleClose();
-                  alert("Form submission successful!");
-                })
-                .catch((error) => {
-                  setSubmitting(false);
-                  alert("Form submission failed!");
-                  console.log(error);
-                });
-            }}
+            onSubmit={handleSubmit}
           >
             <Form
               className="contactFormModal"
