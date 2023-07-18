@@ -31,6 +31,7 @@ const ModalForm = ({ open, handleClose }) => {
     try {
       await axios(options);
       setSubmitting(false);
+      resetForm();
       setShowSuccessMessage(true);
       setTimeout(() => {
         handleClose();
