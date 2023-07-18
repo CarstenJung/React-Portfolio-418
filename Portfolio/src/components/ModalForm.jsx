@@ -21,7 +21,6 @@ const ModalForm = ({ open, handleClose }) => {
           <h1 id="modal-title">Get in Touch</h1>
           <p>In Search of My 'TypeError: Company Not Found'</p>
           <Formik
-            action="/"
             initialValues={{
               "bot-field": "",
               "form-name": "contact-form",
@@ -36,6 +35,7 @@ const ModalForm = ({ open, handleClose }) => {
             }}
           >
             <Form
+              action="/"
               method="POST"
               className="contactFormModal"
               data-netlify="true"
