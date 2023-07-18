@@ -12,18 +12,14 @@
   </head>
   <body>
     <form
-      action="/"
       data-netlify="true"
+      data-netlify-recaptcha="true"
       hidden
-      name="contact-form"
+      name="contact"
       netlify-honeypot="bot-field"
     >
-      <input type="text" name="form-name" value="contact-form" />
-      <input name="name" type="text" id="name" value="" />
-      <input name="company" type="text" id="company" value="" />
-      <input name="email" type="email" id="email" value="" />
-      <textarea name="message" id="message"></textarea>
-      <button type="submit">Submit</button>
+      <input type="text" name="username" />
+      <input type="email" name="email" />
       <input name="bot-field" type="hidden" />
     </form>
 
