@@ -15,15 +15,12 @@
     <script type="module" src="/src/main.jsx"></script>
   </body>
   <form
-    action="#"
-    method="POST"
-    class="contactFormModal"
     data-netlify="true"
-    name="contact-form"
     hidden
+    name="contact-form"
+    netlify-honeypot="bot-field"
   >
-    <input type="hidden" name="contact-form" value="contact-form" /><label
-      for="name"
+    <input type="text" name="form-name" value="contact-form" /><label for="name"
       >Name</label
     ><input name="name" type="text" id="name" value="" /><label for="company"
       >Company</label
