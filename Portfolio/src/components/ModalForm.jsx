@@ -20,78 +20,55 @@ const ModalForm = ({ open, handleClose }) => {
           </button>
           <h1 id="modal-title">Get in Touch</h1>
           <p>In Search of My 'TypeError: Company Not Found'</p>
-        </div>
-        <Formik
-          initialValues={{
-            "bot-field": "",
-            "form-name": "contact",
-            email: "",
-            username: "",
-          }}
-        >
-          <Form
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            name="contact"
-            noValidate
+          <Formik
+            initialValues={{
+              "bot-field": "",
+              "form-name": "contact-form",
+              name: "",
+              company: "",
+              email: "",
+              message: "",
+            }}
+            validationSchema={validationSchema}
+            onSubmit={(values, { submitForm }) => {
+              setTimeout(() => {
+                handleClose();
+                submitForm();
+              }, 400);
+            }}
           >
-            <Field type="hidden" name="form-name" />
-            <Field type="hidden" name="bot-field" />
-            <Field name="username" type="text" />
-            <Field name="email" type="email" />
-          </Form>
-        </Formik>
+            <Form
+              action="/"
+              method="POST"
+              className="contactFormModal"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              name="contact-form"
+            >
+              <Field type="hidden" name="bot-field" />
+              <Field type="hidden" name="form-name" value="contact-form" />
+              <label htmlFor="name">Name</label>
+              <Field name="name" type="text" id="name" />
+              <ErrorMessage name="name" component="div" />
+              <label htmlFor="company">Company</label>
+              <Field name="company" type="text" id="company" />
+              <ErrorMessage name="company" component="div" />
+
+              <label htmlFor="email">Email</label>
+              <Field name="email" type="email" id="email" />
+              <ErrorMessage name="email" component="div" />
+
+              <label htmlFor="message">Message</label>
+              <Field name="message" component="textarea" id="message" />
+              <ErrorMessage name="message" component="div" />
+
+              <button type="submit">Submit</button>
+            </Form>
+          </Formik>
+        </div>
       </Modal>
     </div>
   );
 };
 
 export default ModalForm;
-
-{
-  /* <Formik
-  initialValues={{
-    "bot-field": "",
-    "form-name": "contact-form",
-    name: "",
-    company: "",
-    email: "",
-    message: "",
-  }}
-  validationSchema={validationSchema}
-  onSubmit={(values, { submitForm }) => {
-    setTimeout(() => {
-      handleClose();
-      submitForm();
-    }, 400);
-  }}
->
-  <Form
-    action="/"
-    method="POST"
-    className="contactFormModal"
-    data-netlify="true"
-    data-netlify-honeypot="bot-field"
-    name="contact-form"
-  >
-    <Field type="hidden" name="bot-field" />
-    <Field type="hidden" name="form-name" value="contact-form" />
-    <label htmlFor="name">Name</label>
-    <Field name="name" type="text" id="name" />
-    <ErrorMessage name="name" component="div" />
-    <label htmlFor="company">Company</label>
-    <Field name="company" type="text" id="company" />
-    <ErrorMessage name="company" component="div" />
-
-    <label htmlFor="email">Email</label>
-    <Field name="email" type="email" id="email" />
-    <ErrorMessage name="email" component="div" />
-
-    <label htmlFor="message">Message</label>
-    <Field name="message" component="textarea" id="message" />
-    <ErrorMessage name="message" component="div" />
-
-    <button type="submit">Submit</button>
-  </Form>
-</Formik>; */
-}
