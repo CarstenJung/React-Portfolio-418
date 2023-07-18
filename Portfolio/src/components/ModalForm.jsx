@@ -25,15 +25,21 @@ const ModalForm = ({ open, handleClose }) => {
           initialValues={{
             "bot-field": "",
             "form-name": "contact",
-            name: "",
+            email: "",
+            username: "",
           }}
         >
-          <Field type="hidden" name="bot-field" />
-          <Field type="hidden" name="form-name" />
-          <label htmlFor="name">Name</label>
-          <Field name="name" type="text" id="name" />
-          <ErrorMessage name="name" component="div" />
-          <button type="submit">Submit</button>
+          <Form
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            name="contact"
+            noValidate
+          >
+            <Field type="hidden" name="form-name" />
+            <Field type="hidden" name="bot-field" />
+            <Field name="username" type="text" />
+            <Field name="email" type="email" />
+          </Form>
         </Formik>
       </Modal>
     </div>
