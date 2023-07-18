@@ -21,6 +21,7 @@ const ModalForm = ({ open, handleClose }) => {
           <h1 id="modal-title">Get in Touch</h1>
           <p>In Search of My 'TypeError: Company Not Found'</p>
           <Formik
+            action="/"
             initialValues={{
               "bot-field": "",
               "form-name": "contact-form",
@@ -41,7 +42,7 @@ const ModalForm = ({ open, handleClose }) => {
               name="contact-form"
             >
               <Field type="hidden" name="bot-field" />
-              <Field type="hidden" name="form-name" />
+              <Field type="hidden" name="form-name" value="contact-form" />
               <label htmlFor="name">Name</label>
               <Field name="name" type="text" id="name" />
               <ErrorMessage name="name" component="div" />
