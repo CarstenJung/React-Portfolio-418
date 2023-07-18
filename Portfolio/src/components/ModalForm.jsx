@@ -30,10 +30,8 @@ const ModalForm = ({ open, handleClose }) => {
               message: "",
             }}
             validationSchema={validationSchema}
-            onSubmit={(values, { setSubmitting, submitForm }) => {
-              setSubmitting(true);
+            onSubmit={(values, { submitForm }) => {
               setTimeout(() => {
-                setSubmitting(false);
                 handleClose();
                 submitForm();
               }, 400);
