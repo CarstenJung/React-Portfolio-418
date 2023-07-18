@@ -27,9 +27,10 @@ const ModalForm = ({ open, handleClose }) => {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       data: qs.stringify(data),
-      url: "/123",
+      url: "/",
     };
     try {
+      throw new Error('Test error');
       await axios(options);
       setSubmitting(false);
       resetForm();
