@@ -83,7 +83,7 @@ const ModalForm = ({ open, handleClose }) => {
               <label htmlFor="message">Message</label>
               <Field name="message" component="textarea" id="message" />
               <ErrorMessage name="message" component="div" />
-              {showSuccessMessage && (
+              {!showSuccessMessage && (
                 <div className="success-message">
                   Your message has been sent successfully!
                 </div>
