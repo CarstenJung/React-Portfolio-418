@@ -27,8 +27,11 @@ const ModalForm = ({ open, handleClose }) => {
             }}
             validationSchema={validationSchema}
             onSubmit={(values, { setSubmitting }) => {
-              setSubmitting(false);
-              handleClose();
+              setTimeout(() => {
+                /* alert(JSON.stringify(values, null, 2)); */
+                setSubmitting(false);
+                handleClose();
+              }, 400);
             }}
           >
             <Form
