@@ -31,10 +31,23 @@ const ModalForm = ({ open, handleClose }) => {
             }}
             validationSchema={validationSchema}
             onSubmit={(values, { setSubmitting }) => {
-              setTimeout(() => {
-                setSubmitting(false);
-                handleClose();
-              }, 400);
+              fetch("/", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: encode({ "form-name": "contactForm", ...values }),
+              })
+                .then(() => {
+                  setSubmitting(false);
+                  handleClose();
+                  alert("Form submission successful!");
+                })
+                .catch((error) => {
+                  setSubmitting(false);
+                  alert("Form submission failed!");
+                  console.log(error);
+                });
             }}
           >
             <Form
