@@ -2,7 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="./src/assets/img/favicon/favicon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./src/assets/img/favicon/favicon.png"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio - Carsten Jung</title>
   </head>
@@ -10,10 +14,25 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
-  <form action="#" method="POST" class="contactFormModal" data-netlify="true" name="contact-form"><input type="hidden"
-      name="form-name" value="contact-form"><label for="name">Name</label><input name="name" type="text" id="name"
-      value=""><label for="company">Company</label><input name="company" type="text" id="company" value=""><label
-      for="email">Email</label><input name="email" type="email" id="email" value=""><label
-      for="message">Message</label><textarea name="message" id="message"></textarea><button type="submit">Submit</button>
+  <form
+    action="#"
+    method="POST"
+    class="contactFormModal"
+    data-netlify="true"
+    name="contact-form"
+    hidden
+  >
+    <input type="text" name="form-name" value="contact-form" /><label
+      for="name"
+      >Name</label
+    ><input name="name" type="text" id="name" value="" /><label for="company"
+      >Company</label
+    ><input name="company" type="text" id="company" value="" /><label
+      for="email"
+      >Email</label
+    ><input name="email" type="email" id="email" value="" /><label for="message"
+      >Message</label
+    ><textarea name="message" id="message"></textarea
+    ><button type="submit">Submit</button>
   </form>
 </html>
