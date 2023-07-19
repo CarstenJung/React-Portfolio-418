@@ -18,7 +18,7 @@ const WelcomeSection = () => {
   }
 
   useEffect(() => {
-    if (!isSafari() && window.innerWidth > 768) {
+    if (!isSafari() && window.innerWidth > 1366) {
       const split = new SplitText(textRef.current, { type: "words,chars" });
       const chars = split.chars;
 

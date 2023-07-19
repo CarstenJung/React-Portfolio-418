@@ -124,6 +124,23 @@ html {
   }
 }
 
+// Landscape
+#rotateDeviceMessage {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  z-index: 99;
+  display: none;
+
+  h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
+
 // Navigation
 .navBtn,
 .navigationWrapper {
@@ -634,5 +651,19 @@ html {
         }
       }
     }
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) and (orientation: landscape) {
+  #rotateDeviceMessage {
+    display: block;
+  }
+}
+
+/* Medium devices (portrait tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) and (orientation: portrait) {
+  #rotateDeviceMessage {
+    display: block;
   }
 }

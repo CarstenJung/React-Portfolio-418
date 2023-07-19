@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./assets/scss/app.scss";
 
 // Components
@@ -27,6 +27,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <div id="rotateDeviceMessage"><h1>Please rotate your device.</h1></div>
       {/* Navigation component */}
       <Navigation />
       {/* Welcome section component */}
