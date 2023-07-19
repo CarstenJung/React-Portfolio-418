@@ -114,6 +114,16 @@ html {
   }
 }
 
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
 // Navigation
 .navBtn,
 .navigationWrapper {
@@ -448,13 +458,23 @@ html {
     max-width: 400px;
     margin: auto;
 
+    div {
+      background: #333;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      padding: 0.3rem 0.5rem;
+    }
+
     input,
     textarea {
-      margin-bottom: 1rem;
       border: 1px solid #333;
       font-size: 1rem;
       font-weight: 500;
       outline: none;
+    }
+
+    label {
+      margin-top: 0.8rem;
     }
 
     input {
@@ -467,7 +487,7 @@ html {
     }
 
     button {
-      margin-top: 1rem;
+      margin: 1.5rem auto 0 auto;
       padding: 0.7rem;
       border: 1px solid #333;
       background: #333;
@@ -476,7 +496,6 @@ html {
       font-weight: 500;
       cursor: pointer;
       width: 100px;
-      margin: auto;
       transition: all 0.3s ease-in-out;
 
       &:hover {
@@ -555,7 +574,13 @@ html {
       background: #fff;
       width: 100vw;
       padding: 0;
-      padding-top: 14px;
+      padding-top: 14.5px;
+
+      .homeMobile {
+        width: 25px;
+        position: relative;
+        bottom: 4px;
+      }
 
       ul {
         display: flex;
@@ -582,11 +607,13 @@ html {
         }
 
         .dataTextItem {
-          h3, h1 {
+          h3,
+          h1 {
             margin-top: 0.5rem;
           }
 
-          h3, p {
+          h3,
+          p {
             font-size: 1rem;
           }
         }
@@ -596,9 +623,9 @@ html {
         display: block;
 
         .dataSliderImageSmall {
-            max-width: 50%;
-            animation: slideIn 1s ease-out forwards;
-          }
+          max-width: 50%;
+          animation: slideIn 1s ease-out forwards;
+        }
 
         img {
           background-size: cover;
@@ -607,14 +634,5 @@ html {
         }
       }
     }
-  }
-}
-
-@keyframes slideIn {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0%);
   }
 }

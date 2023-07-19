@@ -2,10 +2,13 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
+import Home from "../../src/assets/img/icons/home.png"
+
 
 const Navigation = () => {
   const navRef = useRef(null);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [mobileIcon, setMobileIcon] = useState(false);
 
   // useEffect to listen to window resize event
   useEffect(() => {
@@ -65,8 +68,10 @@ const Navigation = () => {
 
     if (windowWidth < 768) {
       animateMenu(isVisible, 20);
+      setMobileIcon(true)
     } else {
       animateMenu(isVisible, 120);
+      setMobileIcon(false)
     }
   };
 
@@ -81,7 +86,7 @@ const Navigation = () => {
         <nav>
           <ul>
             <li>
-              <a href="#home">Home</a>
+              <a href="#home">{mobileIcon ? <img class="homeMobile" src={Home} alt="Home" /> : "Home"}</a>
             </li>
             <li>
               <a href="#about">About</a>
