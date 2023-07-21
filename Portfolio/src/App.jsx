@@ -1,7 +1,7 @@
 // Import Hooks
 import { useState } from "react";
 // Import the main SCSS styles for the application
-import "./assets/scss/app.scss"; 
+import "./assets/scss/app.scss";
 
 // Components
 import WelcomeSection from "./components/WelcomeSection";
