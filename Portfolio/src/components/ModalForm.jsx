@@ -1,3 +1,4 @@
+// Importing required hooks and components from Formik, Yup, @mui/material, axios, and qs
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Modal } from "@mui/material";
@@ -6,9 +7,11 @@ import qs from "qs";
 import { useState } from "react";
 
 const ModalForm = ({ open, handleClose }) => {
+  // Two state variables to show a success or error message when the form is submitted
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
 
+  // A validation schema for Formik, defined with Yup.
   const validationSchema = Yup.object().shape({
     name: Yup.string().required("Name is required"),
     email: Yup.string()
@@ -17,6 +20,7 @@ const ModalForm = ({ open, handleClose }) => {
     message: Yup.string().required("Message is required"),
   });
 
+  // The function that's called when the form is submitted.
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     const data = {
       ...values,

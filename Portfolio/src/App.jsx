@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+// Import Hooks
+import { useState } from "react";
+// Import the main SCSS styles for the application
 import "./assets/scss/app.scss";
 
 // Components
@@ -8,25 +10,29 @@ import TextSlideSection from "./components/TextSlideSection";
 import DataSlider from "./components/DataSlider";
 import ModalForm from "./components/ModalForm";
 
-// Data
+// Import Data for DataSlider
 import { DataItems } from "./assets/data/DataItems";
 
 const App = () => {
+  // State to keep track of the current data item (DataSlider)
   const [currentDataItem, setCurrentDataItem] = useState(DataItems[0]);
 
-  // MODAL FORM
+  // State to control whether the modal form is open or not
   const [open, setOpen] = useState(false);
 
+  // Function to open the modal form
   const handleOpen = () => {
     setOpen(true);
   };
 
+  // Function to close the modal form
   const handleClose = () => {
     setOpen(false);
   };
 
   return (
     <div className="App">
+      {/* Rotate message */}
       <div id="rotateDeviceMessage"><h1>Please rotate your device.</h1></div>
       {/* Navigation component */}
       <Navigation />

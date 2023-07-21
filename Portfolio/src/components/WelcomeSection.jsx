@@ -1,13 +1,17 @@
+// Import necessary libraries and hooks
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
 
+// Register the SplitText plugin from GSAP
 gsap.registerPlugin(SplitText);
 
 const WelcomeSection = () => {
+  // Initialize refs for the text and underline
   const textRef = useRef();
   const underlineRef = useRef();
 
+  // Function to check if the browser is Safari
   function isSafari() {
     return (
       /constructor/i.test(window.HTMLElement) ||
@@ -17,6 +21,7 @@ const WelcomeSection = () => {
     );
   }
 
+  // useEffect to animate the text and underline
   useEffect(() => {
     if (!isSafari() && window.innerWidth > 1366) {
       const split = new SplitText(textRef.current, { type: "words,chars" });
