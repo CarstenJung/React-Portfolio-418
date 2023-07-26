@@ -3,9 +3,6 @@ import professionalCertificateCS50 from "../img/certificates/cs50-professional.j
 import CS50X from "../img/certificates/CS50x.jpg";
 import CS50W from "../img/certificates/CS50w.jpg";
 import ADVANCEDREACT from "../img/certificates/advancedReact.jpg";
-import JAVASCRIPT from "../img/certificates/javascript.jpg";
-import ADOBEXD from "../img/certificates/adobeXD.jpg";
-import HTMLCSS from "../img/certificates/html-css.jpg";
 
 import KREATIFABRIK from "../img/websites/KreatiFabrik.jpg";
 import PETERSEN from "../img/websites/Petersen.jpg";
@@ -60,37 +57,6 @@ export const DataItems = [
   },
   {
     id: 5,
-    title: "Udemy",
-    subtitle: "Online Course JavaScript • Understand the weird parts",
-    description: "Udemy - Certificate of Completion",
-    subdescription: "Online course • 11 hours",
-    link: "ude.my/UC-Z484ZM",
-    image: JAVASCRIPT,
-    btnText: "View Certificate",
-  },
-  {
-    id: 6,
-    title: "Udemy",
-    subtitle: "Online Course UI/UX • Design Essentials - Adobe XD UI UX Design",
-    description: "Udemy - Certificate of Completion",
-    subdescription: "Online course • 11.5 hours",
-    link: "ude.my/UC-MOYLTKZ",
-    image: ADOBEXD,
-    btnText: "View Certificate",
-  },
-  {
-    id: 7,
-    title: "Udemy",
-    subtitle:
-      "Online HTML/CSS • Build Websites with HTML5 & CSS3: Beginner to Pro!",
-    description: "Udemy - Certificate of Completion",
-    subdescription: "Online course • 16 hours",
-    link: "ude.my/UC-E7SY10",
-    image: HTMLCSS,
-    btnText: "View Certificate",
-  },
-  {
-    id: 8,
     title: "CV",
     subtitle: "Professional Experience and Qualifications",
     description: "Swapped closing deals for creating breakpoints.",
@@ -101,7 +67,7 @@ export const DataItems = [
     btnText: "View CV",
   },
   {
-    id: 9,
+    id: 6,
     title: "Kreatifabrik",
     subtitle: "Website for a marketing and advertising agency",
     description:
@@ -112,7 +78,7 @@ export const DataItems = [
     btnText: "Visit Website",
   },
   {
-    id: 10,
+    id: 7,
     title: "Petersen",
     subtitle: "Company page of a craft market",
     description:
@@ -123,7 +89,7 @@ export const DataItems = [
     btnText: "Visit Website",
   },
   {
-    id: 11,
+    id: 8,
     title: "Snapers",
     subtitle: "Online shop for e-shishas",
     description: "Onlineshop created with Shopify",
@@ -133,7 +99,7 @@ export const DataItems = [
     btnText: "Visit Shop",
   },
   {
-    id: 12,
+    id: 9,
     title: "Kieninger",
     subtitle: "Company page of a consulting agency",
     description:
