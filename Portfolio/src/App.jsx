@@ -56,9 +56,6 @@ const App = () => {
       <TextSlideSection
         title="SKILLS"
         showIconsSkills={true}
-        /* TODO text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et nisi
-                  sem. Maecenas imperdiet ante et nulla pulvinar, in ultricies tellus
-                  ultricies." */
         showIcons={false}
         animationDirection={false}
         addedId="skills"
