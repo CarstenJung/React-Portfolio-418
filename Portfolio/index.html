@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="./src/assets/img/favicon/favicon.png"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - Carsten Jung</title>
-  </head>
-  <body>
-    <form
-      data-netlify="true"
-      hidden
-      name="contactForm"
-      netlify-honeypot="bot-field"
-    >
-      <input name="name" type="text"/>
-      <input name="company" type="text"/>
-      <input name="email" type="email"/>
-      <textarea name="message"></textarea>
-      <input name="bot-field" type="hidden" />
-    </form>
 
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="./src/assets/img/favicon/favicon.png" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TYPLXJQT97"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-TYPLXJQT97');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Carsten Jung</title>
+</head>
+
+<body>
+  <form data-netlify="true" hidden name="contactForm" netlify-honeypot="bot-field">
+    <input name="name" type="text" />
+    <input name="company" type="text" />
+    <input name="email" type="email" />
+    <textarea name="message"></textarea>
+    <input name="bot-field" type="hidden" />
+  </form>
+
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>
